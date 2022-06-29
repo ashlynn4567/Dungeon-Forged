@@ -22,7 +22,19 @@ const userSchema = new Schema(
         password: {
             type: String, 
             required: true,
-        }, 
+            hide: true,
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            // date formatter
+            // get: (createdAtVal = dateFormat(createdAtVal))
+        },
+        updatedAt: {
+            type: Date,
+            // date formatter
+            // get: (updatedAtVal = dateFormat(updatedAtVal))
+        },
         // set savedCharacters as an array of data that follows characterSchema rules
         savedCharacters: [characterSchema], 
     }, 
