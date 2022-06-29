@@ -4,7 +4,7 @@ const path = require("path");
 const db = require("./config/connection");
 const { auth } = require("./utils/auth");
 const { ApolloServer } = require("apollo-server-express");
-const { typeDefs, resolvers } = require("schemas");
+const { typeDefs, resolvers } = require("./schemas");
 
 // instantiate app
 const app = express();
@@ -32,7 +32,7 @@ app.get("*", (req, res) => {
 });
 
 // create instance of Apollo server
-const startApolloServer = async(typeDefs, resolvers) => {
+const startApolloServer = async() => {
     await server.start();
     server.applyMiddleware({ app });
 
