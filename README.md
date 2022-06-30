@@ -71,7 +71,7 @@ We're always interested in refactoring code to improve it's functionality. If yo
 | **Ashley Smith**                                    | **Jack Ford**                            | **Jackson Mason**                                                        | **Kaia Innes**                        |
 | --------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------- |
 | - [Github](https://github.com/ashlynn4567)          | - [Github](https://github.com/SaintShay) | - [Github](https://github.com/ShibuyaCho)                                | - [Github](https://github.com/Re1d0n) |
-| - [LinkedIn](www.linkedin.com/in/Ashley-Lynn-Smith) | - [LinkedIn]([insert later])             | - [LinkedIn](https://www.linkedin.com/mwlite/in/jackson-mason-28b043228) | - [LinkedIn]([insert later])          |
+| - [LinkedIn](https://www.linkedin.com/in/ashley-lynn-smith/) | - [LinkedIn]([insert later])             | - [LinkedIn](https://www.linkedin.com/mwlite/in/jackson-mason-28b043228) | - [LinkedIn]([insert later])          |
 
 ### Acknowledgements
 
