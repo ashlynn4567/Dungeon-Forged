@@ -12,615 +12,695 @@ const { Schema, model } = require("mongoose");
 // character Schema
 const characterSchema = new Schema(
     {
-        characterName: {
-            type: String, 
-            required: true,
-            trim: true,
-            minLength: 1,
-            maxLength: 40,
-        },
-        class: {
-            type: String,
-            required: true,
-            trim: true,
-            minLength: 1,
-            maxLength: 30,
-        }, 
-        level: {
-            type: Number, 
-            required: true,
-            trim: true,
-            min: [1, "Level must not be 0!"],
-            max: [20, "Highest allowed level for this tool is 20!"], 
-        }, 
-        background: {
-            type: String, 
-            trim: true,
-            minLength: 1,
-            maxLength: 40,
-        },
-        playerName: {
-            type: mongoose.Schema.Types.ObjectId, 
-            ref: "User",
-            required: true,
-        },
-        race: {
-            type: String, 
-            required: true,
-            trim: true,
-            minLength: 1,
-            maxLength: 30,
-        }, 
-        alignment: {
-            type: String, 
-            trim: true,
-            minLength: 1,
-            maxLength: 40,
-        },
-        experiencePoints: {
-            type: Number, 
-            trim: true,
-            min: 1,
-            max: 400000,
-        },
-        statistics: {
-            abilityScores: {
-                strength: {
-                    type: Number,
-                    required: true,
-                    trim: true,
-                    min: [1, "Ability score must not be 0!"],
-                    max: 30, 
-                },  
-                dexterity: {
-                    type: Number, 
-                    required: true,
-                    trim: true,
-                    min: [1, "Ability score must not be 0!"],
-                    max: 30, 
-                },
-                constitution: {
-                    type: Number, 
-                    required: true,
-                    trim: true,
-                    min: [1, "Ability score must not be 0!"],
-                    max: 30, 
-                },
-                intelligence: {
-                    type: Number, 
-                    required: true,
-                    trim: true,
-                    min: [1, "Ability score must not be 0!"],
-                    max: 30, 
-                }, 
-                wisdom: {
-                    type: Number, 
-                    required: true,
-                    trim: true,
-                    min: [1, "Ability score must not be 0!"],
-                    max: 30, 
-                }, 
-                charisma: {
-                    type: Number, 
-                    required: true,
-                    trim: true,
-                    min: [1, "Ability score must not be 0!"],
-                    max: 30, 
-                },
+        characterSheet: {
+            characterName: {
+                type: String, 
+                required: true,
+                trim: true,
+                minLength: 1,
+                maxLength: 40,
+            },
+            class: {
+                type: String,
+                required: true,
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
             }, 
-            inspiration: Number, 
-            proficiencyBonus: Number, 
-            savingThrows: {
-                strength: {
-                    proficient: {
-                        type: Boolean,
-                        default: false,
-                    },
-                    value: Number,
-                    additionalModifiers: {
-                        type: [
-                            {
-                                source: String,
-                                value: Number,
-                            }
-                        ], 
-                        default: [],
-                    },
-                },  
-                dexterity: {
-                    proficient: {
-                        type: Boolean,
-                        default: false,
-                    },
-                    value: Number,
-                    additionalModifiers: {
-                        type: [
-                            {
-                                source: String,
-                                value: Number,
-                            }
-                        ], 
-                        default: [],
-                    },
-                },
-                constitution: {
-                    proficient: {
-                        type: Boolean,
-                        default: false,
-                    },
-                    value: Number,
-                    additionalModifiers: {
-                        type: [
-                            {
-                                source: String,
-                                value: Number,
-                            }
-                        ], 
-                        default: [],
-                    },
-                },
-                intelligence: {
-                    proficient: {
-                        type: Boolean,
-                        default: false,
-                    },
-                    value: Number,
-                    additionalModifiers: {
-                        type: [
-                            {
-                                source: String,
-                                value: Number,
-                            }
-                        ], 
-                        default: [],
-                    },
-                }, 
-                wisdom: {
-                    proficient: {
-                        type: Boolean,
-                        default: false,
-                    },
-                    value: Number,
-                    additionalModifiers: {
-                        type: [
-                            {
-                                source: String,
-                                value: Number,
-                            }
-                        ], 
-                        default: [],
-                    },
-                }, 
-                charisma: {
-                    proficient: {
-                        type: Boolean,
-                        default: false,
-                    },
-                    value: Number,
-                    additionalModifiers: {
-                        type: [
-                            {
-                                source: String,
-                                value: Number,
-                            }
-                        ], 
-                        default: [],
-                    },
-                },
-            }, 
-            armorClass: {
+            level: {
                 type: Number, 
                 required: true,
                 trim: true,
-                min: [1, "Armor class must not be 0!"],
-                max: 30, 
+                min: [1, "Level must not be 0!"],
+                max: [20, "Highest allowed level for this tool is 20!"], 
             }, 
-            intiative: {
-                type: Number, 
+            background: {
+                type: String, 
+                trim: true,
+                minLength: 1,
+                maxLength: 40,
+            },
+            playerName: {
+                type: mongoose.Schema.Types.ObjectId, 
+                ref: "User",
+                required: true,
+            },
+            race: {
+                type: String, 
                 required: true,
                 trim: true,
-                min: [-5, "Initiave cannot go any lower!"],
-                max: 20, 
+                minLength: 1,
+                maxLength: 30,
             }, 
-            speed: {
-                type: Number, 
-                required: true,
+            alignment: {
+                type: String, 
                 trim: true,
-                min: [0, "Speed must not be 0!"],
-                max: 120, 
-            }, 
-            hitPoints: [
-                {
-                    maximum: {
+                minLength: 1,
+                maxLength: 40,
+            },
+            experiencePoints: {
+                type: Number, 
+                trim: true,
+                min: 1,
+                max: 400000,
+            },
+            statistics: {
+                abilityScores: {
+                    strength: {
+                        type: Number,
+                        required: true,
+                        trim: true,
+                        min: [1, "Ability score must not be 0!"],
+                        max: 30, 
+                    },  
+                    dexterity: {
                         type: Number, 
                         required: true,
                         trim: true,
-                        min: [0, "Max HP must not be 0!"],
-                        max: 600,
+                        min: [1, "Ability score must not be 0!"],
+                        max: 30, 
+                    },
+                    constitution: {
+                        type: Number, 
+                        required: true,
+                        trim: true,
+                        min: [1, "Ability score must not be 0!"],
+                        max: 30, 
+                    },
+                    intelligence: {
+                        type: Number, 
+                        required: true,
+                        trim: true,
+                        min: [1, "Ability score must not be 0!"],
+                        max: 30, 
                     }, 
-                    current: {
+                    wisdom: {
                         type: Number, 
+                        required: true,
                         trim: true,
-                        min: -600,
-                        max: 600,
-                    },
-                    temporary: {
+                        min: [1, "Ability score must not be 0!"],
+                        max: 30, 
+                    }, 
+                    charisma: {
                         type: Number, 
+                        required: true,
                         trim: true,
-                        min: [0, "Temporary HP cannot be negative!"],
-                        max: 1000,
+                        min: [1, "Ability score must not be 0!"],
+                        max: 30, 
                     },
-                    hitDice: {
-                        total: {
-                            // TO-DO
+                }, 
+                inspiration: Number, 
+                proficiencyBonus: Number, 
+                savingThrows: {
+                    strength: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                        additionalModifiers: {
+                            type: [
+                                {
+                                    source: String,
+                                    value: Number,
+                                }
+                            ], 
+                            default: [],
+                        },
+                    },  
+                    dexterity: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                        additionalModifiers: {
+                            type: [
+                                {
+                                    source: String,
+                                    value: Number,
+                                }
+                            ], 
+                            default: [],
+                        },
+                    },
+                    constitution: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                        additionalModifiers: {
+                            type: [
+                                {
+                                    source: String,
+                                    value: Number,
+                                }
+                            ], 
+                            default: [],
+                        },
+                    },
+                    intelligence: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                        additionalModifiers: {
+                            type: [
+                                {
+                                    source: String,
+                                    value: Number,
+                                }
+                            ], 
+                            default: [],
+                        },
+                    }, 
+                    wisdom: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                        additionalModifiers: {
+                            type: [
+                                {
+                                    source: String,
+                                    value: Number,
+                                }
+                            ], 
+                            default: [],
+                        },
+                    }, 
+                    charisma: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                        additionalModifiers: {
+                            type: [
+                                {
+                                    source: String,
+                                    value: Number,
+                                }
+                            ], 
+                            default: [],
+                        },
+                    },
+                }, 
+                armorClass: {
+                    type: Number, 
+                    required: true,
+                    trim: true,
+                    min: [1, "Armor class must not be 0!"],
+                    max: 30, 
+                }, 
+                intiative: {
+                    type: Number, 
+                    required: true,
+                    trim: true,
+                    min: [-5, "Initiave cannot go any lower!"],
+                    max: 20, 
+                }, 
+                speed: {
+                    type: Number, 
+                    required: true,
+                    trim: true,
+                    min: [0, "Speed must not be 0!"],
+                    max: 120, 
+                }, 
+                hitPoints: [
+                    {
+                        maximum: {
+                            type: Number, 
+                            required: true,
+                            trim: true,
+                            min: [0, "Max HP must not be 0!"],
+                            max: 600,
                         }, 
                         current: {
-                            // TO-DO
+                            type: Number, 
+                            trim: true,
+                            min: -600,
+                            max: 600,
+                        },
+                        temporary: {
+                            type: Number, 
+                            trim: true,
+                            min: [0, "Temporary HP cannot be negative!"],
+                            max: 1000,
+                        },
+                        hitDice: {
+                            total: {
+                                // TO-DO
+                            }, 
+                            current: {
+                                // TO-DO
+                            }
                         }
-                    }
-                } 
-            ], 
-            skills: [
+                    } 
+                ], 
+                skills: [
+                    {
+                        acrobatics: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number,
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        animalHandling: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        arcana: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        athletics: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        deception: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number,
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        history: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        insight: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        intimidation: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        investigation: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        medicine: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        nature: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        perception: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        performance: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        persuasion: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        religion: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        sleightOfHand: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number,
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        stealth: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                        survival: {
+                            proficient: {
+                                type: Boolean,
+                                default: false,
+                            },
+                            value: Number, 
+                            additionalModifiers: {
+                                type: [
+                                    {
+                                        source: String,
+                                        value: Number,
+                                    }
+                                ], 
+                                default: [],
+                            },
+                        },
+                    },
+                ],
+                passivePerception: Number,
+            }, 
+            // TO-DO: change to attacks + spellcasting?
+            weapons: [
                 {
-                    acrobatics: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
+                    weaponName: {
+                        type: String, 
+                        trim: true, 
+                    }, 
+                    proficient: Boolean,
+                    attackBonus: String, 
+                    damage: {
+                        damageType: String, 
+                        damageValue: String,
                     },
-                    animalHandling: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
+                }
+            ], 
+            proficiencies: [
+                {
+                    // TO-DO
+                    tools: [String],
+                    // TO-DO
+                    languages: [String], 
+                    // TO-DO
+                    armor: [String], 
+                    // TO-DO
+                    weapons: [String], 
+                },
+            ],
+            equipment: [
+                {
+                    itemName: { type: String, trim: true },
+                    itemWeight: Number, 
+                    itemDescription: { type: String, trim: true },
+                }
+            ],
+            featuresAndTraits: [
+                {
+                    feature: [
+                        {
+                            name: {
+                                type: String,
+                                default: "",
+                            },
+                            description: {
+                                type: String,
+                                default: "",
+                            },
                         },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
+                    ], 
+                    default: [],
+                }
+            ],
+        },
+        backstoryAndPersonality: {
+            age: {
+                type: Number, 
+                trim: true,
+                min: [1, "Age must not be 0!"], 
+            },
+            height: {
+                type: String, 
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
+            },
+            weight: {
+                type: String, 
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
+            },
+            eyes: {
+                type: String, 
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
+            },
+            skin: {
+                type: String, 
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
+            },
+            hair: {
+                type: String, 
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
+            },
+            personalityTraits: {
+
+            }, 
+            ideals: {
+
+            },
+            bonds: {
+
+            }, 
+            flaws: {
+                
+            },
+            backstory: String,
+            alliesAndOrganizations: String,
+            treasure: String,
+        }, 
+        spells: {
+            spellcastingClass: {
+                type: String,
+                required: true,
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
+            },
+            spellcastingAbility: {
+                type: String,
+                required: true,
+                trim: true,
+                minLength: 1,
+                maxLength: 30,
+            }, 
+            spellSaveDC: {
+                type: Number, 
+                required: true,
+                trim: true,
+                min: [8, "Lowest possible DC is 8."],
+                max: [30, "Highest possible spell save DC is 30."], 
+            },
+            spellAttackBonus: {
+                type: Number, 
+                required: true,
+                trim: true,
+                min: [2, "Lowest possible spell attack bonus is 8."],
+                max: [20, "Highest possible spell attack bonus is 20."], 
+            },
+            spellList: [
+                {
+                    name: {
+                        type: String,
+                        default: "",
                     },
-                    arcana: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    athletics: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    deception: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    history: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    insight: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    intimidation: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    investigation: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    medicine: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    nature: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    perception: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    performance: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    persuasion: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    religion: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    sleightOfHand: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    stealth: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
-                    },
-                    survival: {
-                        proficient: {
-                            type: Boolean,
-                            default: false,
-                        },
-                        value: Number, 
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
+                    level: Number,
+                    description: {
+                        type: String,
+                        default: "",
                     },
                 },
             ],
-            passivePerception: Number,
-        }, 
-        // TO-DO: change to attacks + spellcasting?
-        weapons: [
-            {
-                weaponName: {
-                    type: String, 
-                    trim: true, 
-                }, 
-                attackBonus: String, 
-                damage: {
-                    damageType: String, 
-                    damageValue: String,
-                },
-            }
-        ], 
-        proficiencies: [
-            {
-                // TO-DO
-                tools: [String],
-                // TO-DO
-                languages: [String], 
-                // TO-DO
-                armor: [String], 
-                // TO-DO
-                weapons: [String], 
-            },
-        ],
-        equipment: [
-            {
-                itemName: { type: String, trim: true },
-                itemWeight: Number, 
-                itemDescription: { type: String, trim: true },
-            }
-        ],
-        featuresAndTraits: [
-            {
-                feature: [
-                    {
-                        name: {
-                            type: String,
-                            default: "",
-                        },
-                        description: {
-                            type: String,
-                            default: "",
-                        },
-                    },
-                ], 
-                default: [],
-            }
-        ],
-        // TO-DO: finish later
-        spells: [
-            {
-                name: {
-                    type: String,
-                    default: "",
-                },
-                description: {
-                    type: String,
-                    default: "",
-                },
-            },
-        ],
-        age: {
-            type: Number, 
-            trim: true,
-            min: [1, "Age must not be 0!"], 
         },
         createdAt: {
             type: Date,

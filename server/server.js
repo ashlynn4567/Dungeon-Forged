@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 3001;
 
 // apollo server initiation
 const server = new ApolloServer({
-    // typeDefs, 
-    // resolvers,
+    typeDefs, 
+    resolvers,
     context: auth
 });
 
