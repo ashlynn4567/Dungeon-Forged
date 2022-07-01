@@ -1,5 +1,6 @@
 // imports 
 const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
 // import schemas
 // const raceSchema = require("./Race");

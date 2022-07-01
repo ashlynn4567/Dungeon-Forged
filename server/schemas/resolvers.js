@@ -4,6 +4,16 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
-        
+        helloWorld: () => {
+            return "Hello World!";
+        }
     }
-}
+};
+
+// const resolvers = {
+//     Query: {
+        
+//     },
+// };
+
+module.exports = resolvers;
