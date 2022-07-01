@@ -1,6 +1,6 @@
 {
-  "short_name": "Dungeon Forged",
-  "name": "Dungeon Forged",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
