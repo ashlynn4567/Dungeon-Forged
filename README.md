@@ -66,6 +66,7 @@ This project is currently in a developmental state. Many features need to be add
   - A dashboard page where users can view all of their created characters upon logging in.
   - A character creation page that allows users to fill out the associated form in order to create a new character.
   - A stylized footer that includes a link to the GitHub page, our logo, and basic copyright/licencing information.
+- We would like to also add mobile support for the site so that it is easily used on both mobile and desktop, reaching a much larger audience in terms of accessibility.
 
 After reaching MVP status, the following changes would greatly elevate the user experience of our application:
 
@@ -75,6 +76,9 @@ After reaching MVP status, the following changes would greatly elevate the user 
   - A "homebrew" checkbox that allows users to override certain functions. For example, if the user wishes to change a statistic that is auto-calculated (ex: the player recieved a custom magic item that increases their athletics statistic by 3), they can simply check the box and input any additional modifiers that they wish to include.
 - We would like to implement a feature in which users can easily export their character sheet as a printable and downloadable pdf form for their convenience.
 - It would be nice to allow users to add "homebrew" items, spells, features, and etc to our database so that other users can then add those elements to their character list utilizing a quick lookup feature. This way, homebrew traits that are used more than once are much more easily added to the character sheet.
+- Eventually we'd like to add support for players who wish to create a multiclassed character.
+- A FAQ page that gives the user more information for common questions about the usage of our site.
+- An option that allows users to generate a randomized character sheet for both the entire character and also for smaller sections (ex: picking the wizard class but randomizing the subclass).
 
 We're always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
