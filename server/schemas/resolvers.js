@@ -4,10 +4,30 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
-        helloWorld: () => {
-            return "Hello World!";
-        }
-    }
+        me: async(parent, args, context) => {
+            if (context.user) {
+                const userData = await User
+                    .findOne({ _id: context.user._id})
+                    .select("-__v");
+
+                return userData;
+            };
+        }, 
+
+        // get all users
+        users: async () => {
+            return User
+                .find()
+                .select("-__v")
+        }, 
+
+        // get one user by username
+        user: async (parent, { username }) => {
+            return User
+                .findOne({ username })
+                .select("-__v")
+        },
+    },
 };
 
 // const resolvers = {

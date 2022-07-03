@@ -1,5 +1,6 @@
 // imports
 const User = require("./User");
+const Character = require("./Character");
 
 // exports
-module.exports = { User };
+module.exports = { User, Character };

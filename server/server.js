@@ -26,11 +26,6 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../client/build")));
 };
 
-// send static HTML if wildcard field searched
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
 // create instance of Apollo server
 const startApolloServer = async() => {
     await server.start();
