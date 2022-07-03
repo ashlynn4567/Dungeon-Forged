@@ -54,13 +54,27 @@ Follow [this link]([insert later]) to view and use our site!
 - [JWT](https://jwt.io/)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [concurrently](https://www.npmjs.com/package/concurrently)
+- [faker.js](https://fakerjsdocs.netlify.app/)
 
 ## Future Development
 
-In the future, I would like to add the following improvements:
+This project is currently in a developmental state. Many features need to be added in order to make it an MVP SPA. In the future, we would like to add the following improvements:
 
-- [insert later]
-- [insert later]
+- A user-friendly front-end graphical interface using React components and CSS styling. This includes, but is not limited to:
+  - A navbar header section that has funcitonal clickable links.
+  - A login/signup page where users can either create a new account or log into their existing account.
+  - A dashboard page where users can view all of their created characters upon logging in.
+  - A character creation page that allows users to fill out the associated form in order to create a new character.
+  - A stylized footer that includes a link to the GitHub page, our logo, and basic copyright/licencing information.
+
+After reaching MVP status, the following changes would greatly elevate the user experience of our application:
+
+- We would love to implement the following features to the character form itself:
+  - Helper functions to automatically calculate certain statistics for the users. For example, a character's athletics score will always equal their strength modifier plus their proficiency bonus if they are proficient in that stat. Instead of users filling out both the strength and the athletics stat manually, the athletics stat will update in real time according to the value placed in the strength box.
+  - A larger database of information so that the character form behaves in a "smart" fashion, allowing users to select their race, class, spells, and etc. from a list of options. This way, users can save time by simply selecting the option they're looking for instead of typing out the entire feature manually each time.
+  - A "homebrew" checkbox that allows users to override certain functions. For example, if the user wishes to change a statistic that is auto-calculated (ex: the player recieved a custom magic item that increases their athletics statistic by 3), they can simply check the box and input any additional modifiers that they wish to include.
+- We would like to implement a feature in which users can easily export their character sheet as a printable and downloadable pdf form for their convenience.
+- It would be nice to allow users to add "homebrew" items, spells, features, and etc to our database so that other users can then add those elements to their character list utilizing a quick lookup feature. This way, homebrew traits that are used more than once are much more easily added to the character sheet.
 
 We're always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
@@ -68,10 +82,10 @@ We're always interested in refactoring code to improve it's functionality. If yo
 
 ### Contributers
 
-| **Ashley Smith**                                             | **Jack Ford**                            | **Jackson Mason**                                                        | **Kaia Innes**                                                 |
-| ------------------------------------------------------------ | ---------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------- |
-| - [Github](https://github.com/ashlynn4567)                   | - [Github](https://github.com/SaintShay) | - [Github](https://github.com/ShibuyaCho)                                | - [Github](https://github.com/Re1d0n)                          |
-| - [LinkedIn](https://www.linkedin.com/in/ashley-lynn-smith/) | - [LinkedIn]([insert later])             | - [LinkedIn](https://www.linkedin.com/mwlite/in/jackson-mason-28b043228) | - [LinkedIn]https://www.linkedin.com/in/kaia-innes-960034224/) |
+| **Ashley Smith**                                             | **Jack Ford**                            | **Jackson Mason**                                                        | **Kaia Innes**                                                  |
+| ------------------------------------------------------------ | ---------------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| - [Github](https://github.com/ashlynn4567)                   | - [Github](https://github.com/SaintShay) | - [Github](https://github.com/ShibuyaCho)                                | - [Github](https://github.com/Re1d0n)                           |
+| - [LinkedIn](https://www.linkedin.com/in/ashley-lynn-smith/) | - [LinkedIn]([insert later])             | - [LinkedIn](https://www.linkedin.com/mwlite/in/jackson-mason-28b043228) | - [LinkedIn](https://www.linkedin.com/in/kaia-innes-960034224/) |
 
 ### Acknowledgements
 
