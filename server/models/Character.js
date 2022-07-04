@@ -1,6 +1,5 @@
 // imports 
 const { Schema, model } = require("mongoose");
-const mongoose = require("mongoose");
 
 // import schemas
 // const raceSchema = require("./Race");
@@ -42,7 +41,7 @@ const characterSchema = new Schema(
                 maxLength: 40,
             },
             playerName: {
-                type: mongoose.Schema.Types.ObjectId, 
+                type: Schema.Types.ObjectId, 
                 ref: "User",
                 required: true,
             },
@@ -110,7 +109,10 @@ const characterSchema = new Schema(
                         max: 30, 
                     },
                 }, 
-                inspiration: Number, 
+                inspiration: {
+                    type: Number,
+                    default: 0,
+                }, 
                 proficiencyBonus: Number, 
                 savingThrows: {
                     strength: {
@@ -251,14 +253,17 @@ const characterSchema = new Schema(
                             trim: true,
                             min: [0, "Temporary HP cannot be negative!"],
                             max: 1000,
+                            default: 0,
                         },
                         hitDice: {
                             total: {
                                 // TO-DO
+                                type: String,
                             }, 
                             current: {
                                 // TO-DO
-                            }
+                                type: String,
+                            },
                         }
                     } 
                 ], 
@@ -563,48 +568,75 @@ const characterSchema = new Schema(
                         type: String, 
                         trim: true, 
                     }, 
+                    weaponType: [
+                        {
+                            type: String, 
+                            trim: true,
+                            default: "",
+                        },
+                    ],
                     proficient: Boolean,
-                    attackBonus: String, 
+                    attackBonus: Number, 
                     damage: {
                         damageType: String, 
                         damageValue: String,
                     },
+                    properties: [
+                        {
+                            type: String, 
+                            trim: true,
+                            default: "",
+                        },
+                    ],
                 }
             ], 
-            proficiencies: [
-                {
-                    // TO-DO
-                    tools: [String],
-                    // TO-DO
-                    languages: [String], 
-                    // TO-DO
-                    armor: [String], 
-                    // TO-DO
-                    weapons: [String], 
+            proficiencies: {
+                // TO-DO
+                tools: [String],
+                // TO-DO
+                languages: [String], 
+                // TO-DO
+                armor: [String], 
+                // TO-DO
+                weapons: [String], 
+            },
+            equipment: {
+                items: [
+                    {
+                        itemName: { type: String, trim: true },
+                        itemType: { 
+                            type: String, 
+                            trim: true,
+                            default: "",
+                        },
+                        itemWeight: Number, 
+                        itemRarity: { type: String, trim: true },
+                        itemDescription: { type: String, trim: true },
+                    },
+                ],
+                currency: {
+                    copperPieces: { type: Number, trim: true, default: 0 },
+                    silverPieces: { type: Number, trim: true, default: 0 }, 
+                    electrum: { type: Number, trim: true, default: 0 },
+                    goldPieces: { type: Number, trim: true, default: 0 }, 
+                    platinumPieces: { type: Number, trim: true, default: 0 },
                 },
-            ],
-            equipment: [
-                {
-                    itemName: { type: String, trim: true },
-                    itemWeight: Number, 
-                    itemDescription: { type: String, trim: true },
-                }
-            ],
+            },
             featuresAndTraits: [
                 {
-                    feature: [
-                        {
-                            name: {
-                                type: String,
-                                default: "",
-                            },
-                            description: {
-                                type: String,
-                                default: "",
-                            },
-                        },
-                    ], 
-                    default: [],
+                    name: {
+                        type: String,
+                        default: "",
+                    },
+                    origin: {
+                        type: String,
+                        default: "",
+                    },
+                    description: {
+                        type: String,
+                        default: "",
+                    }, 
+                    default: {},
                 }
             ],
         },
@@ -644,18 +676,30 @@ const characterSchema = new Schema(
                 minLength: 1,
                 maxLength: 30,
             },
-            personalityTraits: {
-
-            }, 
-            ideals: {
-
-            },
-            bonds: {
-
-            }, 
-            flaws: {
-                
-            },
+            personalityTraits: [
+                {
+                    type: String,
+                    default: "",
+                },
+            ], 
+            ideals: [
+                {
+                    type: String,
+                    default: "",
+                },
+            ],
+            bonds: [
+                {
+                    type: String,
+                    default: "",
+                },
+            ], 
+            flaws: [
+                {
+                    type: String,
+                    default: "",
+                },
+            ],
             backstory: String,
             alliesAndOrganizations: String,
             treasure: String,
@@ -689,6 +733,118 @@ const characterSchema = new Schema(
                 min: [2, "Lowest possible spell attack bonus is 8."],
                 max: [20, "Highest possible spell attack bonus is 20."], 
             },
+            spellSlotsTotal: {
+                level1: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level2: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level3: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level4: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level5: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level6: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level7: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level8: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+                level9: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of spell slots is 10."], 
+                },
+            },
+            spellSlotsExpended: {
+                level1: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level2: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level3: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level4: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level5: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level6: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level7: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level8: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+                level9: {
+                    type: Number, 
+                    trim: true,
+                    min: [0, "Cannot have less than 0 spell slots."],
+                    max: [20, "Highest allowed number of expended spell slots is 10."], 
+                },
+            },
             spellList: [
                 {
                     name: {
@@ -696,6 +852,15 @@ const characterSchema = new Schema(
                         default: "",
                     },
                     level: Number,
+                    type: String,
+                    castingTime: String,
+                    range: String,
+                    target: { type: String, default: "" },
+                    components: [
+                        { type: String }
+                    ],
+                    duration: String,
+                    prepared: { type: Boolean, default: false, },
                     description: {
                         type: String,
                         default: "",
