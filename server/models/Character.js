@@ -1,5 +1,6 @@
 // imports 
 const { Schema, model } = require("mongoose");
+const { dateFormat } = require("../utils/dateFormat");
 
 // import schemas
 // const raceSchema = require("./Race");
@@ -9,6 +10,7 @@ const { Schema, model } = require("mongoose");
 // ex: Stealth = Dex + PB
 // TO-DO: Add a "homebrew" checkbox option that lets users override default
 // and type in their own homebrew rules or values
+
 // character Schema
 const characterSchema = new Schema(
     {
@@ -873,12 +875,12 @@ const characterSchema = new Schema(
             type: Date,
             default: Date.now,
             // date formatter
-            // get: (createdAtVal = dateFormat(createdAtVal))
+            get: (createdAtVal => dateFormat(createdAtVal))
         },
         updatedAt: {
             type: Date,
             // date formatter
-            // get: (updatedAtVal = dateFormat(updatedAtVal))
+            get: (updatedAtVal => dateFormat(updatedAtVal))
         },
     },
     {
@@ -888,41 +890,7 @@ const characterSchema = new Schema(
     },
 );
 
-// TO-DO: minlength and maxlength function for String variables
-// TO-DO: date formatter
-
-// Character.pre("save", function (next, docs) {
-// 	// Loop through skills
-// 	Object.keys(this.stats.skills).forEach((key) => {
-// 		let skill = this.stats.skills[key];
-// 		skill.skill.value = Math.floor(
-// 			// Calculate modifier
-// 			(this.stats.abilities[skill.ability] - 10) / 2
-// 		);
-// 	});
-
-// 	let Race = this.model("Race");
-
-// 	// Get the characters speed from their race.
-// 	// This will likely be changed because the
-// 	// character speed may change.
-// 	Race.findOne({ _id: this.race })
-// 		.then((characterRace) => {
-// 			if (characterRace) {
-// 				this.stats.speed = characterRace.stats.speed;
-// 			}
-// 		})
-// 		.then(() => {
-// 			next();
-// 		});
-// });
-
-// Character.pre("save", function (next, docs) {
-// 	this.updatedAt = new Date();
-// 	next();
-// });
-
 const Character = model("Character", characterSchema);
 
 // exports
-module.exports = characterSchema;
+module.exports = Character, characterSchema;

@@ -5,7 +5,7 @@ const { User, Character } = require("../models");
 
 db.once("open", async () => {
     // clear database of any old data, character first
-    // await Character.deleteMany({});
+    await Character.deleteMany({});
     await User.deleteMany({});
 
     // create user data
@@ -25,7 +25,7 @@ db.once("open", async () => {
 
     // TO-DO: Create database of possible data for races, classes, and etc for seeded data to pull from
 
-    const createdCharacters = [
+    const characterData = [
         {
             characterID: 1,
             characterSheet: {
@@ -1814,6 +1814,8 @@ db.once("open", async () => {
         //     createdAt: Date.now,
         // },
     ];
+
+    const createdCharacters = await Character.collection.insertMany(characterData);
 
     console.log("Data seeded successfully.");
     process.exit(0);
