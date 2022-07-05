@@ -21,7 +21,7 @@ db.once("open", async () => {
 
     const createdUsers = await User.collection.insertMany(userData);
 
-    // TO-DO: Assign character data to users
+    // TO-DO: Assign character data to users within characterData seeds
 
     // TO-DO: Create database of possible data for races, classes, and etc for seeded data to pull from
 
@@ -1814,6 +1814,8 @@ db.once("open", async () => {
         //     createdAt: Date.now,
         // },
     ];
+
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
 
     const createdCharacters = await Character.collection.insertMany(characterData);
 
