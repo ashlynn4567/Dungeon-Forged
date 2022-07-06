@@ -15,6 +15,7 @@ const { dateFormat } = require("../utils/dateFormat");
 const characterSchema = new Schema(
     {
         playerName: {
+            // TO-DO: Make this username instead of userID (in typedefs too)
             type: Schema.Types.ObjectId, 
             ref: "User",
         },
@@ -214,136 +215,134 @@ const characterSchema = new Schema(
                         }
                     } 
                 ], 
-                skills: [
-                    {
-                        acrobatics: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
+                skills: {
+                    acrobatics: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
                         },
-                        animalHandling: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        arcana: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        athletics: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        deception: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        history: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        insight: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        intimidation: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        investigation: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        medicine: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        nature: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        perception: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        performance: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        persuasion: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        religion: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        sleightOfHand: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number,
-                        },
-                        stealth: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
-                        survival: {
-                            proficient: {
-                                type: Boolean,
-                                default: false,
-                            },
-                            value: Number, 
-                        },
+                        value: Number,
                     },
-                ],
+                    animalHandling: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    arcana: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    athletics: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    deception: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    history: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    insight: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    intimidation: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    investigation: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    medicine: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    nature: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    perception: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    performance: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    persuasion: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    religion: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    sleightOfHand: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number,
+                    },
+                    stealth: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                    survival: {
+                        proficient: {
+                            type: Boolean,
+                            default: false,
+                        },
+                        value: Number, 
+                    },
+                },
                 passivePerception: Number,
             }, 
             // TO-DO: change to attacks + spellcasting?

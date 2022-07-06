@@ -329,12 +329,12 @@ db.once("open", async () => {
                     {
                         name: "Tinker",
                         origin: "Subrace - Rock Gnome",
-                        description: "You have proficiency with artisan tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options: \n Clockwork Toy. This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents. \n Fire Starter. The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action. \n Music Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed. \n At your DM's discretion, you may make other objects with effects similar in power to these. The Prestidigitation cantrip is a good baseline for such effects.",
+                        description: "You have proficiency with artisan tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options: \nClockwork Toy. This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents. \nFire Starter. The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action. \nMusic Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed. \nAt your DM's discretion, you may make other objects with effects similar in power to these. The Prestidigitation cantrip is a good baseline for such effects.",
                     },
                     {
                         name: "Entertainer Routines",
                         origin: "Background - Entertainer",
-                        description: "A good entertainer is versatile and spicing up every performance with lots of variety of different routines. You have to chose one to three routines or else role on the table below to explain your experience as an entertainer 5e. \n Options: Actor, Dancer, Fire-eater, Jester, Juggler, Instrumentalist, Poet, Singer, Storyteller, Tumbler.",
+                        description: "A good entertainer is versatile and spicing up every performance with lots of variety of different routines. You have to chose one to three routines or else role on the table below to explain your experience as an entertainer 5e. \nOptions: Actor, Dancer, Fire-eater, Jester, Juggler, Instrumentalist, Poet, Singer, Storyteller, Tumbler.",
                     },
                     {
                         name: "By Popular Demand",
@@ -349,7 +349,7 @@ db.once("open", async () => {
                     {
                         name: "Spellcasting",
                         origin: "Class - Druid",
-                        description: "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will. \n Cantrips: At 1st level, you know two cantrips of your choice from the druid spell list. You learn additional druid cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Druid table. \n Preparing and Casting Spells: The Druid table shows how many spell slots you have to cast your druid spells of 1st level and higher. To cast one of these druid spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest. You prepare the list of druid spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + your Druid level (minimum of one spell). The spells must be of a level for which you have spell slots. For example, if you are a 3rd-level druid, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell Cure Wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells. You can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list. \n Spellcasting Ability: Wisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one. \n Spellcasting Focus: You can use a druidic focus as a spellcasting focus for your druid spells.",
+                        description: "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will. \nCantrips: At 1st level, you know two cantrips of your choice from the druid spell list. You learn additional druid cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Druid table. \nPreparing and Casting Spells: The Druid table shows how many spell slots you have to cast your druid spells of 1st level and higher. To cast one of these druid spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest. You prepare the list of druid spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + your Druid level (minimum of one spell). The spells must be of a level for which you have spell slots. For example, if you are a 3rd-level druid, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell Cure Wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells. You can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list. \nSpellcasting Ability: Wisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one. \nSpellcasting Focus: You can use a druidic focus as a spellcasting focus for your druid spells.",
                     },
                 ],
             }, 
@@ -414,7 +414,7 @@ db.once("open", async () => {
                         components: ["V", "S"],
                         duration: "10 minutes",
                         prepared: false,
-                        description: "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again. \n You can also attack with the flame, although doing so ends the spell. When you cast this spell, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.",
+                        description: "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again. \nYou can also attack with the flame, although doing so ends the spell. When you cast this spell, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.",
                     },
                     {
                         name: "Druidcraft",
@@ -426,7 +426,7 @@ db.once("open", async () => {
                         components: ["V", "S"],
                         duration: "Instantaneous",
                         prepared: false,
-                        description: "Whispering to the spirits of nature, you create one of the following effects within range. \n You create a tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round. \n You instantly make a flower blossom, a seed pod open, or a leaf bud bloom. \n You create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal, or the faint odor of skunk. The effect must fit in a 5-foot cube. \n You instantly light or snuff out a candle, a torch, or a small campfire.",
+                        description: "Whispering to the spirits of nature, you create one of the following effects within range. \nYou create a tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round. \nYou instantly make a flower blossom, a seed pod open, or a leaf bud bloom. \nYou create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal, or the faint odor of skunk. The effect must fit in a 5-foot cube. \nYou instantly light or snuff out a candle, a torch, or a small campfire.",
                     },
                     {
                         name: "Healing Word",
@@ -438,7 +438,7 @@ db.once("open", async () => {
                         components: ["V"],
                         duration: "Instantaneous",
                         prepared: false,
-                        description: "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. \n At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the Healing increases by 1d4 for each slot level above 1st.",
+                        description: "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. \nAt Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the Healing increases by 1d4 for each slot level above 1st.",
                     },
                     {
                         name: "Thunderwave",
@@ -450,7 +450,7 @@ db.once("open", async () => {
                         components: ["V", "S"],
                         duration: "Instantaneous",
                         prepared: false,
-                        description: "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet. \n At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+                        description: "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet. \nAt Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
                     },
                     {
                         name: "Entangle",
@@ -462,7 +462,7 @@ db.once("open", async () => {
                         components: ["V", "S"],
                         duration: "Concentration, Up to 1 minute",
                         prepared: false,
-                        description: "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain. \n A creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself. \n When the spell ends, the conjured plants wilt away.",
+                        description: "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain. \nA creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself. \nWhen the spell ends, the conjured plants wilt away.",
                     },
                     {
                         name: "Cure Wounds",
@@ -474,7 +474,7 @@ db.once("open", async () => {
                         components: ["V", "S"],
                         duration: "Instantaneous",
                         prepared: false,
-                        description: "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs. \n At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the Healing increases by 1d8 for each slot level above 1st.",
+                        description: "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs. \nAt Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the Healing increases by 1d8 for each slot level above 1st.",
                     },
                     {
                         name: "Faerie Fire",
@@ -486,7 +486,7 @@ db.once("open", async () => {
                         components: ["V"],
                         duration: "Concentration, Up to 1 minute",
                         prepared: false,
-                        description: "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. \n Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
+                        description: "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. \nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
                     },
                 ]
             },
@@ -710,7 +710,7 @@ db.once("open", async () => {
                             itemQuantity: 1,
                             itemWeight: 0,
                             itemRarity: "Common",
-                            itemDescription: "A good mount can help you move more quickly through the wilderness, but its primary purpose is to carry the gear that would otherwise slow you down. \n An animal pulling a carriage, cart, chariot, sled, or wagon can move weight up to five times its base carrying capacity, including the weight of the vehicle. If multiple animals pull the same vehicle, they can add their carrying capacity together.",
+                            itemDescription: "A good mount can help you move more quickly through the wilderness, but its primary purpose is to carry the gear that would otherwise slow you down. \nAn animal pulling a carriage, cart, chariot, sled, or wagon can move weight up to five times its base carrying capacity, including the weight of the vehicle. If multiple animals pull the same vehicle, they can add their carrying capacity together.",
                         },
                         {
                             itemName: "Cart",
@@ -794,7 +794,7 @@ db.once("open", async () => {
                     {
                         name: "Breath Weapon - White Dragon",
                         origin: "Race - Dragonborn",
-                        description: "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation (White dragon - 15 ft cone, con save, cold damage). \n When you use your breath weapon, each creature in the area of exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. \n After you use your breath weapon, you cannot use it again until you complete a short or long rest.",
+                        description: "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation (White dragon - 15 ft cone, con save, cold damage). \nWhen you use your breath weapon, each creature in the area of exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. \nAfter you use your breath weapon, you cannot use it again until you complete a short or long rest.",
                     },
                     {
                         name: "Damage Resistance - White Dragon",
@@ -804,27 +804,27 @@ db.once("open", async () => {
                     {
                         name: "Guild Business",
                         origin: "Background - Guild Artisan",
-                        description: "Most of the guilds are naturally found in the cities which are large enough to support various artisans which are practicing the same trade. However, your guild artisan 5e might be instead a loose networks of artisans like whose each work n a different village within the larger realm. To determine nature of your guild you have to work with your DM (dungeon master). \n As one of the members of your guild, you have to know the skills which are needed to create finished items from the raw materials (There are reflected in your proficiency with a certain kinds of the artisan's tools. \n As well as the principles of the trade and also the good business practices. The query now is either you abondon your trade for adventure or else take on the extra effort to weave the adventuring and also trade together.",
+                        description: "Most of the guilds are naturally found in the cities which are large enough to support various artisans which are practicing the same trade. However, your guild artisan 5e might be instead a loose networks of artisans like whose each work n a different village within the larger realm. To determine nature of your guild you have to work with your DM (dungeon master). \nAs one of the members of your guild, you have to know the skills which are needed to create finished items from the raw materials (There are reflected in your proficiency with a certain kinds of the artisan's tools. \nAs well as the principles of the trade and also the good business practices. The query now is either you abondon your trade for adventure or else take on the extra effort to weave the adventuring and also trade together.",
                     },
                     {
                         name: "Guild Membership",
                         origin: "Background - Guild Artisan",
-                        description: "Like an establishment and the respect member of guild you can rely on the certain benefits which membership is providing and your fellow membership guild members will be providing you with lodging  and also food if necessary and also pay for your funeral if it needed. In some of the cities and also towns, a guildhall offers a central place to meet the other members of your profession which has the features to be a good place to meet potential patrons allies, or hirelings. \n Guilds are often wield with a tremendous political power. Suppose, if you're accused of a crime sometimes or somewhere there your guild will be supporting you if the good case can be made either for your innocence or for the crime is justifiable. Here you also can gain access to the powerful political figures too through the guild but if you are one of the members in the good standing. For the guilds coffers those kinds of connections might be need the donation of money or the magic items. To the guild you have to pay the amount which dues of 5gp, otherwise if you miss payments unfortunately, you must need to make up back dues to remain in the guilds good graces.",
+                        description: "Like an establishment and the respect member of guild you can rely on the certain benefits which membership is providing and your fellow membership guild members will be providing you with lodging  and also food if necessary and also pay for your funeral if it needed. In some of the cities and also towns, a guildhall offers a central place to meet the other members of your profession which has the features to be a good place to meet potential patrons allies, or hirelings. \nGuilds are often wield with a tremendous political power. Suppose, if you're accused of a crime sometimes or somewhere there your guild will be supporting you if the good case can be made either for your innocence or for the crime is justifiable. Here you also can gain access to the powerful political figures too through the guild but if you are one of the members in the good standing. For the guilds coffers those kinds of connections might be need the donation of money or the magic items. To the guild you have to pay the amount which dues of 5gp, otherwise if you miss payments unfortunately, you must need to make up back dues to remain in the guilds good graces.",
                     },
                     {
                         name: "Spellcasting",
                         origin: "Class - Cleric",
-                        description: "As a conduit for divine power, you can cast cleric spells. \n Cantrips: At 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table. \n Spell Slots: The Cleric table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest. \n You prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots. \n For example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell Cure Wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells. \n You can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list. \n Spellcasting Ability: Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one. \n Ritual Casting: You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared. \n Spellcasting Focus: You can use a holy symbol as a spellcasting focus for your cleric spells.",
+                        description: "As a conduit for divine power, you can cast cleric spells. \nCantrips: At 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table. \nSpell Slots: The Cleric table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest. \nYou prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots. \nFor example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell Cure Wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells. \nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list. \nSpellcasting Ability: Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one. \nRitual Casting: You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared. \nSpellcasting Focus: You can use a holy symbol as a spellcasting focus for your cleric spells.",
                     },
                     {
                         name: "Divine Domain - Light",
                         origin: "Class - Cleric",
-                        description: "At 1st level, you choose a domain shaped by your choice of Deity and the gifts they grant you. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels. \n Domain Spells: Each domain has a list of spells-its domain spells that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. \n If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+                        description: "At 1st level, you choose a domain shaped by your choice of Deity and the gifts they grant you. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels. \nDomain Spells: Each domain has a list of spells-its domain spells that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. \nIf you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
                     },
                     {
                         name: "Warding Flare",
                         origin: "Subclass - Domain of Light",
-                        description: "Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. \n You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.",
+                        description: "Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. \nYou can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.",
                     },
                 ],
             }, 
@@ -913,7 +913,7 @@ db.once("open", async () => {
                         components: ["V"],
                         duration: "Up to 1 minute",
                         prepared: false,
-                        description: "You manifest a minor wonder, a sign of supernatural power, within range. You create one of the following magical effects within range: \n Your voice booms up to three times as loud as normal for 1 minute. \n You cause flames to flicker, brighten, dim, or change color for 1 minute. \n You cause harmless tremors in the ground for 1 minute. \n You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers. \n You instantaneously cause an unlocked door or window to fly open or slam shut. \n You alter the appearance of your eyes for 1 minute. \n If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
+                        description: "You manifest a minor wonder, a sign of supernatural power, within range. You create one of the following magical effects within range: \nYour voice booms up to three times as loud as normal for 1 minute. \nYou cause flames to flicker, brighten, dim, or change color for 1 minute. \nYou cause harmless tremors in the ground for 1 minute. \nYou create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers. \nYou instantaneously cause an unlocked door or window to fly open or slam shut. \nYou alter the appearance of your eyes for 1 minute. \nIf you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
                     },
                     {
                         name: "Light",
@@ -925,7 +925,7 @@ db.once("open", async () => {
                         components: ["V", "M (A firefly or phosphorescent moss)"],
                         duration: "1 hour",
                         prepared: false,
-                        description: "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action. \n If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
+                        description: "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action. \nIf you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
                     },
                     {
                         name: "Burning Hands",
@@ -937,7 +937,7 @@ db.once("open", async () => {
                         components: ["V", "S"],
                         duration: "Instantaneous",
                         prepared: false,
-                        description: "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried. \n At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+                        description: "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried. \nAt Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
                     },
                     {
                         name: "Faerie Fire",
@@ -949,7 +949,7 @@ db.once("open", async () => {
                         components: ["V"],
                         duration: "Concentration, Up to 1 minute",
                         prepared: false,
-                        description: "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. \n Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
+                        description: "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. \nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
                     },
                     {
                         name: "Bless",
@@ -961,7 +961,7 @@ db.once("open", async () => {
                         components: ["V", "S", "M (A sprinkling of holy water)"],
                         duration: "Concentration, Up to 1 minute",
                         prepared: false,
-                        description: "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw. \n At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
+                        description: "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw. \nAt Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
                     },
                     {
                         name: "Healing Word",
@@ -973,7 +973,7 @@ db.once("open", async () => {
                         components: ["V"],
                         duration: "Instantaneous",
                         prepared: false,
-                        description: "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. \n At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the Healing increases by 1d4 for each slot level above 1st.",
+                        description: "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. \nAt Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the Healing increases by 1d4 for each slot level above 1st.",
                     },
                     {
                         name: "Guiding Bolt",
@@ -1474,28 +1474,31 @@ db.once("open", async () => {
         },
     ];
 
-    for (let i = 0; i < characterData.length; i++) {
-        const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-        const { username, _id: userId } = createdUsers.ops[randomUserIndex];
+    // for (let i = 0; i < characterData.length; i++) {
+    //     const randomUserIndex = Math.floor(Math.random() * userData.length);
+    //     const { username } = userData[randomUserIndex];
 
-        const characterSheetData = characterData[i].characterSheet;
-        const characterBackstoryData = characterData[i].backstoryAndPersonality;
-        const characterSpellsData = characterData[i].spells;
+    //     const characterSheetData = characterData[i].characterSheet;
+    //     console.log(characterSheetData)
+    //     const characterBackstoryData = characterData[i].backstoryAndPersonality;
+    //     console.log(characterBackstoryData)
+    //     const characterSpellsData = characterData[i].spells;
+    //     console.log(characterSpellsData)
 
-        const createdCharacter = await Character.create(
-            { playerName: username }, 
-            { characterSheet: characterSheetData }, 
-            { backstoryAndPersonality: characterBackstoryData }, 
-            { spells: characterSpellsData }, 
-        );
+    //     const createdCharacter = await Character.create(
+    //         { playerName: username }, 
+    //         { characterSheet: characterSheetData }, 
+    //         { backstoryAndPersonality: characterBackstoryData }, 
+    //         { spells: characterSpellsData }, 
+    //     );
 
-        await User.updateOne(
-            { _id: userId }, 
-            { $push: { savedCharacters: createdCharacter._id } }
-        );
+    //     await User.updateOne(
+    //         { _id: userId }, 
+    //         { $push: { savedCharacters: createdCharacter._id } }
+    //     );
 
-        createdCharacters.push(createdCharacter);
-    };
+    //     createdCharacters.push(createdCharacter);
+    // };
     
     console.log("Data seeded successfully.");
     process.exit(0);
