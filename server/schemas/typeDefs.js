@@ -1,5 +1,7 @@
 const { gql } = require("apollo-server-express");
 
+// TO-DO: Queries and Mutations for types created from character data
+
 // create our typeDefs
 const typeDefs = gql`
     type User {

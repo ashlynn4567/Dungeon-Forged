@@ -2,6 +2,8 @@ const { User, Character } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
+// TO-DO: Create resolvers for User and Character Data
+
 const resolvers = {
     Query: {
         me: async(parent, args, context) => {
@@ -29,11 +31,5 @@ const resolvers = {
         },
     },
 };
-
-// const resolvers = {
-//     Query: {
-        
-//     },
-// };
 
 module.exports = resolvers;
