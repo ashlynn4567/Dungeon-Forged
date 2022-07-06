@@ -37,7 +37,12 @@ const userSchema = new Schema(
             get: (updatedAtVal => dateFormat(updatedAtVal))
         },
         // set savedCharacters as an array of data that follows characterSchema rules
-        // savedCharacters: [characterSchema], 
+        savedCharacters: [
+            {
+                type: Schema.Types.ObjectId, 
+                ref: "Character",
+            }
+        ],
     }, 
     // use virtuals
     {

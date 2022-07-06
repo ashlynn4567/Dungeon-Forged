@@ -8,6 +8,66 @@ const typeDefs = gql`
         email: String
     }
 
+    type Character {
+        characterId: ID
+        characterSheet: {
+            characterName: String
+            class: String
+            level: Int
+            background: String
+            playerName: User
+            race: String
+            alignment: String
+            experiencePoints: Int
+            statistics: {
+                abilityScores: {
+                    strength: Int
+                    dexterity: Int
+                    constitution: Int
+                    intelligence: Int
+                    wisdom: Int
+                    charisma: Int
+                }
+                inspiration: Int
+                proficiencyBonus: Int
+                savingThrows: {
+                    strength: {
+                        proficient: Boolean
+                        value: Int
+                    }
+                    dexterity: {
+                        proficient: Boolean
+                        value: Int
+                    }
+                    constitution: {
+                        proficient: Boolean
+                        value: Int
+                    }
+                    intelligence: {
+                        proficient: Boolean
+                        value: Int
+                    }
+                    wisdom: {
+                        proficient: Boolean
+                        value: Int
+                    }
+                    charisma: {
+                        proficient: Boolean
+                        value: Int
+                    }
+                }
+                armorClass: Int
+                ini
+            }
+        }
+
+    }
+
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type Query {
         me: User
         users: [User]

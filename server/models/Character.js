@@ -5,7 +5,7 @@ const { dateFormat } = require("../utils/dateFormat");
 // import schemas
 // const raceSchema = require("./Race");
 
-// TO-DO: Potentially break into smaller collections and link tables together
+// TO-DO: Potentially break into smaller model collections and link tables together
 // TO-DO: Implement helper functions to calculate and autopopulate numbers
 // ex: Stealth = Dex + PB
 // TO-DO: Add a "homebrew" checkbox option that lets users override default
@@ -14,6 +14,10 @@ const { dateFormat } = require("../utils/dateFormat");
 // character Schema
 const characterSchema = new Schema(
     {
+        playerName: {
+            type: Schema.Types.ObjectId, 
+            ref: "User",
+        },
         characterSheet: {
             characterName: {
                 type: String, 
@@ -41,12 +45,7 @@ const characterSchema = new Schema(
                 trim: true,
                 minLength: 1,
                 maxLength: 40,
-            },
-            playerName: {
-                type: Schema.Types.ObjectId, 
-                ref: "User",
-                required: true,
-            },
+            }, 
             race: {
                 type: String, 
                 required: true,
@@ -123,15 +122,6 @@ const characterSchema = new Schema(
                             default: false,
                         },
                         value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
                     },  
                     dexterity: {
                         proficient: {
@@ -139,15 +129,6 @@ const characterSchema = new Schema(
                             default: false,
                         },
                         value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
                     },
                     constitution: {
                         proficient: {
@@ -155,15 +136,6 @@ const characterSchema = new Schema(
                             default: false,
                         },
                         value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
                     },
                     intelligence: {
                         proficient: {
@@ -171,15 +143,6 @@ const characterSchema = new Schema(
                             default: false,
                         },
                         value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
                     }, 
                     wisdom: {
                         proficient: {
@@ -187,15 +150,6 @@ const characterSchema = new Schema(
                             default: false,
                         },
                         value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
                     }, 
                     charisma: {
                         proficient: {
@@ -203,15 +157,6 @@ const characterSchema = new Schema(
                             default: false,
                         },
                         value: Number,
-                        additionalModifiers: {
-                            type: [
-                                {
-                                    source: String,
-                                    value: Number,
-                                }
-                            ], 
-                            default: [],
-                        },
                     },
                 }, 
                 armorClass: {
@@ -221,7 +166,7 @@ const characterSchema = new Schema(
                     min: [1, "Armor class must not be 0!"],
                     max: 30, 
                 }, 
-                intiative: {
+                initiative: {
                     type: Number, 
                     required: true,
                     trim: true,
@@ -277,63 +222,27 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number,
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         animalHandling: {
                             proficient: {
                                 type: Boolean,
                                 default: false,
                             },
-                            value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
+                            value: Number,
                         },
                         arcana: {
                             proficient: {
                                 type: Boolean,
                                 default: false,
                             },
-                            value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
+                            value: Number,
                         },
                         athletics: {
                             proficient: {
                                 type: Boolean,
                                 default: false,
                             },
-                            value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
+                            value: Number,
                         },
                         deception: {
                             proficient: {
@@ -341,15 +250,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number,
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         history: {
                             proficient: {
@@ -357,15 +257,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         insight: {
                             proficient: {
@@ -373,47 +264,20 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         intimidation: {
                             proficient: {
                                 type: Boolean,
                                 default: false,
                             },
-                            value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
+                            value: Number,
                         },
                         investigation: {
                             proficient: {
                                 type: Boolean,
                                 default: false,
                             },
-                            value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
+                            value: Number,
                         },
                         medicine: {
                             proficient: {
@@ -421,15 +285,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         nature: {
                             proficient: {
@@ -437,31 +292,13 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         perception: {
                             proficient: {
                                 type: Boolean,
                                 default: false,
                             },
-                            value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
+                            value: Number,
                         },
                         performance: {
                             proficient: {
@@ -469,15 +306,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         persuasion: {
                             proficient: {
@@ -485,15 +313,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         religion: {
                             proficient: {
@@ -501,15 +320,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         sleightOfHand: {
                             proficient: {
@@ -517,15 +327,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number,
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         stealth: {
                             proficient: {
@@ -533,15 +334,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                         survival: {
                             proficient: {
@@ -549,15 +341,6 @@ const characterSchema = new Schema(
                                 default: false,
                             },
                             value: Number, 
-                            additionalModifiers: {
-                                type: [
-                                    {
-                                        source: String,
-                                        value: Number,
-                                    }
-                                ], 
-                                default: [],
-                            },
                         },
                     },
                 ],

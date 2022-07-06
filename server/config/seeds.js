@@ -21,10 +21,10 @@ db.once("open", async () => {
 
     const createdUsers = await User.collection.insertMany(userData);
 
-    // TO-DO: Assign character data to users within characterData seeds
+    // create character data
+    let createdCharacters = [];
 
     // TO-DO: Create database of possible data for races, classes, and etc for seeded data to pull from
-
     const characterData = [
         {
             characterID: 1,
@@ -33,7 +33,6 @@ db.once("open", async () => {
                 class: "Druid",
                 level: 1,
                 background: "Entertainer",
-                playerName: "[insert later]",
                 race: "Rock Gnome",
                 alignment: "True Neutral",
                 experiencePoints: 0,
@@ -52,32 +51,26 @@ db.once("open", async () => {
                         strength: {
                             proficient: false, 
                             value: -1, 
-                            additionalModifiers: [],
                         },
                         dexterity: {
                             proficient: false, 
-                            value: 2, 
-                            additionalModifiers: [], 
+                            value: 2,  
                         },
                         constitution: {
                             proficient: false, 
-                            value: 4, 
-                            additionalModifiers: [], 
+                            value: 4,  
                         },
                         intelligence: {
                             proficient: true, 
                             value: 3, 
-                            additionalModifiers: [],
                         }, 
                         wisdom: {
                             proficient: true, 
-                            value: 6, 
-                            additionalModifiers: [], 
+                            value: 6,  
                         },
                         charisma: {
                             proficient: false, 
                             value: 0, 
-                            additionalModifiers: [],
                         }, 
                     },
                     armorClass: 13,
@@ -96,92 +89,74 @@ db.once("open", async () => {
                         acrobatics: {
                             proficient: true,
                             value: 4,
-                            additionalModifiers: [],
                         },
                         animalHandling: {
                             proficient: false,
                             value: 4,
-                            additionalModifiers: [],
                         },
                         arcana: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         athletics: {
                             proficient: false,
                             value: -1,
-                            additionalModifiers: [],
                         },
                         deception: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         history: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         insight: {
                             proficient: false,
                             value: 4,
-                            additionalModifiers: [],
                         },
                         intimidation: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         investigation: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         medicine: {
                             proficient: false,
                             value: 4,
-                            additionalModifiers: [],
                         },
                         nature: {
                             proficient: true,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         perception: {
                             proficient: true,
                             value: 6,
-                            additionalModifiers: [],
                         },
                         performance: {
                             proficient: true,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         persuasion: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         religion: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         sleightOfHand: {
                             proficient: false,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         stealth: {
                             proficient: false,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         survival: {
                             proficient: false,
                             value: 4,
-                            additionalModifiers: [],
                         },
                     },
                     passivePerception: 16,
@@ -524,7 +499,6 @@ db.once("open", async () => {
                 class: "Cleric",
                 level: 1,
                 background: "Guild Merchant",
-                playerName: "[insert later]",
                 race: "White Dragonborn",
                 alignment: "Lawful Good",
                 experiencePoints: 0,
@@ -543,32 +517,26 @@ db.once("open", async () => {
                         strength: {
                             proficient: false, 
                             value: 1, 
-                            additionalModifiers: [],
                         },
                         dexterity: {
                             proficient: false, 
-                            value: 2, 
-                            additionalModifiers: [], 
+                            value: 2,  
                         },
                         constitution: {
                             proficient: false, 
-                            value: 2, 
-                            additionalModifiers: [], 
+                            value: 2,  
                         },
                         intelligence: {
                             proficient: false, 
                             value: 1, 
-                            additionalModifiers: [],
                         }, 
                         wisdom: {
                             proficient: true, 
-                            value: 5, 
-                            additionalModifiers: [], 
+                            value: 5,  
                         },
                         charisma: {
                             proficient: true, 
                             value: 2, 
-                            additionalModifiers: [],
                         }, 
                     },
                     armorClass: 18,
@@ -587,92 +555,74 @@ db.once("open", async () => {
                         acrobatics: {
                             proficient: false,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         animalHandling: {
                             proficient: false,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         arcana: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         athletics: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         deception: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         history: {
                             proficient: true,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         insight: {
                             proficient: true,
                             value: 5,
-                            additionalModifiers: [],
                         },
                         intimidation: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         investigation: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         medicine: {
                             proficient: false,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         nature: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         perception: {
                             proficient: false,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         performance: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         persuasion: {
                             proficient: true,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         religion: {
                             proficient: true,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         sleightOfHand: {
                             proficient: false,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         stealth: {
                             proficient: false,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         survival: {
                             proficient: false,
                             value: 3,
-                            additionalModifiers: [],
                         },
                     },
                     passivePerception: 13,
@@ -1060,7 +1010,6 @@ db.once("open", async () => {
                 class: "Warlock",
                 level: 1,
                 background: "Charlatan",
-                playerName: "[insert later]",
                 race: "Half-Orc",
                 alignment: "Chaotic Good",
                 experiencePoints: 0,
@@ -1079,32 +1028,26 @@ db.once("open", async () => {
                         strength: {
                             proficient: false, 
                             value: 1, 
-                            additionalModifiers: [],
                         },
                         dexterity: {
                             proficient: false, 
-                            value: 1, 
-                            additionalModifiers: [], 
+                            value: 1,  
                         },
                         constitution: {
                             proficient: false, 
-                            value: 2, 
-                            additionalModifiers: [], 
+                            value: 2,  
                         },
                         intelligence: {
                             proficient: false, 
                             value: 0, 
-                            additionalModifiers: [],
                         }, 
                         wisdom: {
                             proficient: true, 
-                            value: 2, 
-                            additionalModifiers: [], 
+                            value: 2,  
                         },
                         charisma: {
                             proficient: true, 
                             value: 5, 
-                            additionalModifiers: [],
                         }, 
                     },
                     armorClass: 12,
@@ -1123,92 +1066,74 @@ db.once("open", async () => {
                         acrobatics: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         animalHandling: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         arcana: {
                             proficient: true,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         athletics: {
                             proficient: false,
                             value: -1,
-                            additionalModifiers: [],
                         },
                         deception: {
                             proficient: true,
                             value: 5,
-                            additionalModifiers: [],
                         },
                         history: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         insight: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         intimidation: {
                             proficient: true,
                             value: 5,
-                            additionalModifiers: [],
                         },
                         investigation: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         medicine: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         nature: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         perception: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                         performance: {
                             proficient: false,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         persuasion: {
                             proficient: false,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         religion: {
                             proficient: true,
                             value: 2,
-                            additionalModifiers: [],
                         },
                         sleightOfHand: {
                             proficient: true,
                             value: 3,
-                            additionalModifiers: [],
                         },
                         stealth: {
                             proficient: false,
                             value: 1,
-                            additionalModifiers: [],
                         },
                         survival: {
                             proficient: false,
                             value: 0,
-                            additionalModifiers: [],
                         },
                     },
                     passivePerception: 10,
@@ -1547,278 +1472,31 @@ db.once("open", async () => {
             },
             createdAt: Date.now,
         },
-
-        // {
-        //     characterID: Number,
-        //     characterSheet: {
-        //         characterName: "",
-        //         class: "",
-        //         level: Number,
-        //         background: "",
-        //         playerName: "[insert later]",
-        //         race: "",
-        //         alignment: "",
-        //         experiencePoints: Number,
-        //         statistics: {
-        //             abilityScores: {
-        //                 strength: Number, 
-        //                 dexterity: Number, 
-        //                 constitution: Number, 
-        //                 intelligence: Number, 
-        //                 wisdom: Number, 
-        //                 charisma: Number, 
-        //             },
-        //             inspiration: Number, 
-        //             proficiencyBonus: Number, 
-        //             savingThrows: {
-        //                 strength: {
-        //                     proficient: Boolean, 
-        //                     value: Number, 
-        //                     additionalModifiers: [],
-        //                 },
-        //                 dexterity: {
-        //                     proficient: Boolean, 
-        //                     value: Number, 
-        //                     additionalModifiers: [], 
-        //                 },
-        //                 constitution: {
-        //                     proficient: Boolean, 
-        //                     value: Number, 
-        //                     additionalModifiers: [], 
-        //                 },
-        //                 intelligence: {
-        //                     proficient: Boolean, 
-        //                     value: Number, 
-        //                     additionalModifiers: [],
-        //                 }, 
-        //                 wisdom: {
-        //                     proficient: Boolean, 
-        //                     value: Number, 
-        //                     additionalModifiers: [], 
-        //                 },
-        //                 charisma: {
-        //                     proficient: Boolean, 
-        //                     value: Number, 
-        //                     additionalModifiers: [],
-        //                 }, 
-        //             },
-        //             armorClass: Number,
-        //             initiative: Number,
-        //             speed: Number,
-        //             hitPoints: {
-        //                 maximum: Number,
-        //                 current: Number,
-        //                 temporary: Number,
-        //                 hitDice: {
-        //                     total: "",
-        //                     current: "",
-        //                 },
-        //             },
-        //             skills: {
-        //                 acrobatics: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 animalHandling: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 arcana: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 athletics: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 deception: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 history: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 insight: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 intimidation: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 investigation: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 medicine: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 nature: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 perception: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 performance: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 persuasion: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 religion: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 sleightOfHand: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 stealth: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //                 survival: {
-        //                     proficient: Boolean,
-        //                     value: Number,
-        //                     additionalModifiers: [],
-        //                 },
-        //             },
-        //             passivePerception: Number,
-        //         },
-        //         weapons: [
-        //             {
-        //                 weaponName: "",
-        //                 weaponType: [""],
-        //                 proficient: Boolean,
-        //                 attackBonus: Number,
-        //                 damage: {
-        //                     damageType: "",
-        //                     damageValue: "",
-        //                 },
-        //                 properties: [""],
-        //             },
-        //         ],
-        //         proficiencies: {
-        //             tools: [""],
-        //             languages: [""],
-        //             armor: [""],
-        //             weapons: [""],
-        //         },
-        //         equipment: {
-        //             items: [
-        //                 {
-        //                     itemName: "",
-        //                     itemType: "",
-        //                     itemQuantity: Number,
-        //                     itemWeight: Number,
-        //                     itemRarity: "",
-        //                     itemDescription: "",
-        //                 },
-        //             ],
-        //             currency: {
-        //                 copperPieces: Number,
-        //                 silverPieces: Number, 
-        //                 electrum: Number,
-        //                 goldPieces: Number, 
-        //                 platinumPieces: Number,
-        //             }
-        //         },
-        //         featuresandTraits: [
-        //             {
-        //                 name: "",
-        //                 origin: "",
-        //                 description: "",
-        //             },
-        //         ],
-        //     }, 
-        //     backstoryAndPersonality: {
-        //         age: "",
-        //         height: "",
-        //         weight: "",
-        //         eyes: "",
-        //         skin: "",
-        //         hair: "",
-        //         personalityTraits: [""],
-        //         ideals: [""],
-        //         bonds: [""],
-        //         flaws: [""],
-        //         backstory: "",
-        //         alliesAndOrganizations: "",
-        //         treasure: "",
-        //     },
-        //     spells: {
-        //         spellcastingClass: "",
-        //         spellcastingAbility: "",
-        //         spellSaveDC: Number,
-        //         spellAttackBonus: Number,
-        //         spellSlotsTotal: {
-        //             level1: Number,
-        //             level2: Number,
-        //             level3: Number,
-        //             level4: Number,
-        //             level5: Number,
-        //             level6: Number,
-        //             level7: Number,
-        //             level8: Number,
-        //             level9: Number,
-        //         },
-        //         spellSlotsExpended: {
-        //             level1: Number,
-        //             level2: Number,
-        //             level3: Number,
-        //             level4: Number,
-        //             level5: Number,
-        //             level6: Number,
-        //             level7: Number,
-        //             level8: Number,
-        //             level9: Number,
-        //         },
-        //         spellList: [
-        //             {
-        //                 name: "",
-        //                 level: Number,
-        //                 type: "", 
-        //                 castingTime: "",
-        //                 range: "",
-        //                 target: "",
-        //                 components: [""],
-        //                 duration: "",
-        //                 prepared: false,
-        //                 description: "",
-        //             },
-        //         ]
-        //     },
-        //     createdAt: Date.now,
-        // },
     ];
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+    for (let i = 0; i < characterData.length; i++) {
+        const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+        const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-    const createdCharacters = await Character.collection.insertMany(characterData);
+        const characterSheetData = characterData[i].characterSheet;
+        const characterBackstoryData = characterData[i].backstoryAndPersonality;
+        const characterSpellsData = characterData[i].spells;
 
+        const createdCharacter = await Character.create(
+            { playerName: username }, 
+            { characterSheet: characterSheetData }, 
+            { backstoryAndPersonality: characterBackstoryData }, 
+            { spells: characterSpellsData }, 
+        );
+
+        await User.updateOne(
+            { _id: userId }, 
+            { $push: { savedCharacters: createdCharacter._id } }
+        );
+
+        createdCharacters.push(createdCharacter);
+    };
+    
     console.log("Data seeded successfully.");
     process.exit(0);
 });
