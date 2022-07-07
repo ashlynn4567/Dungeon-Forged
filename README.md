@@ -17,7 +17,7 @@ This is a collaboration project to create a Full-Stack single page application (
 
 ## Deployed Site
 
-Follow [this link]([insert later]) to view and use our site!
+Follow [this link](https://intense-reef-18313.herokuapp.com/) to view and use our site!
 
 ## Features
 
