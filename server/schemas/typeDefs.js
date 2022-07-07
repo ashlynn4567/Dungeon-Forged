@@ -13,7 +13,7 @@ const typeDefs = gql`
     }
 
     type Character {
-        playerId: ID
+        userId: ID
         characterId: ID
         characterSheet: CharacterSheet
         backstoryAndPersonality: BackstoryAndPersonality
@@ -28,7 +28,16 @@ const typeDefs = gql`
         race: String
         alignment: String
         experiencePoints: Int
-        statistics: Statistics
+        abilityScores: AbilityScores
+        inspiration: Int
+        proficiencyBonus: Int
+        savingThrows: SavingThrows
+        armorClass: Int
+        initiative: Int
+        speed: Int
+        hitPoints: HitPoints
+        skills: Skills
+        passivePerception: Int
         weapons: [Weapons]
         proficiencies: Proficiencies
         equipment: Equipment
@@ -43,27 +52,6 @@ const typeDefs = gql`
         race: String
         alignment: String
         experiencePoints: Int
-        statistics: StatisticsInput
-        weapons: [WeaponsInput]
-        proficiencies: ProficienciesInput
-        equipment: EquipmentInput
-        featuresAndTraits: [FeaturesAndTraitsInput]
-    }
-
-    type Statistics {
-        abilityScores: AbilityScores
-        inspiration: Int
-        proficiencyBonus: Int
-        savingThrows: SavingThrows
-        armorClass: Int
-        initiative: Int
-        speed: Int
-        hitPoints: HitPoints
-        skills: [Skills]
-        passivePerception: Int
-    }
-
-    input StatisticsInput {
         abilityScores: AbilityScoresInput
         inspiration: Int
         proficiencyBonus: Int
@@ -72,8 +60,12 @@ const typeDefs = gql`
         initiative: Int
         speed: Int
         hitPoints: HitPointsInput
-        skills: [SkillsInput]
+        skills: SkillsInput
         passivePerception: Int
+        weapons: [WeaponsInput]
+        proficiencies: ProficienciesInput
+        equipment: EquipmentInput
+        featuresAndTraits: [FeaturesAndTraitsInput]
     }
 
     type AbilityScores {
@@ -95,29 +87,29 @@ const typeDefs = gql`
     }
 
     type SavingThrows {
-        strength: GenericStat
-        dexterity: GenericStat
-        constitution: GenericStat
-        intelligence: GenericStat
-        wisdom: GenericStat
-        charisma: GenericStat
+        strength: GenericSavingThrow
+        dexterity: GenericSavingThrow
+        constitution: GenericSavingThrow
+        intelligence: GenericSavingThrow
+        wisdom: GenericSavingThrow
+        charisma: GenericSavingThrow
     }
 
     input SavingThrowsInput {
-        strength: GenericStatInput
-        dexterity: GenericStatInput
-        constitution: GenericStatInput
-        intelligence: GenericStatInput
-        wisdom: GenericStatInput
-        charisma: GenericStatInput
+        strength: GenericSavingThrowInput
+        dexterity: GenericSavingThrowInput
+        constitution: GenericSavingThrowInput
+        intelligence: GenericSavingThrowInput
+        wisdom: GenericSavingThrowInput
+        charisma: GenericSavingThrowInput
     }
 
-    type GenericStat {
+    type GenericSavingThrow {
         proficient: Boolean
         value: Int
     }
 
-    input GenericStatInput {
+    input GenericSavingThrowInput {
         proficient: Boolean
         value: Int
     }
@@ -126,66 +118,66 @@ const typeDefs = gql`
         maximum: Int
         current: Int
         temporary: Int
-        hitDice: HitDice
+        hitDice: String
     }
 
     input HitPointsInput {
         maximum: Int
         current: Int
         temporary: Int
-        hitDice: HitDiceInput
-    }
-
-    type HitDice {
-        total: String
-        current: String
-    }
-
-    input HitDiceInput {
-        total: String
-        current: String
+        hitDice: String
     }
 
     type Skills {
-        acrobatics: GenericStat
-        animalHandling: GenericStat
-        arcana: GenericStat
-        athletics: GenericStat
-        deception: GenericStat
-        history: GenericStat
-        insight: GenericStat
-        intimidation: GenericStat
-        investigation: GenericStat
-        medicine: GenericStat
-        nature: GenericStat
-        perception: GenericStat
-        performance: GenericStat
-        persuasion: GenericStat
-        religion: GenericStat
-        sleightOfHand: GenericStat
-        stealth: GenericStat
-        survival: GenericStat
+        acrobatics: GenericSkills
+        animalHandling: GenericSkills
+        arcana: GenericSkills
+        athletics: GenericSkills
+        deception: GenericSkills
+        history: GenericSkills
+        insight: GenericSkills
+        intimidation: GenericSkills
+        investigation: GenericSkills
+        medicine: GenericSkills
+        nature: GenericSkills
+        perception: GenericSkills
+        performance: GenericSkills
+        persuasion: GenericSkills
+        religion: GenericSkills
+        sleightOfHand: GenericSkills
+        stealth: GenericSkills
+        survival: GenericSkills
     }
 
     input SkillsInput {
-        acrobatics: GenericStatInput
-        animalHandling: GenericStatInput
-        arcana: GenericStatInput
-        athletics: GenericStatInput
-        deception: GenericStatInput
-        history: GenericStatInput
-        insight: GenericStatInput
-        intimidation: GenericStatInput
-        investigation: GenericStatInput
-        medicine: GenericStatInput
-        nature: GenericStatInput
-        perception: GenericStatInput
-        performance: GenericStatInput
-        persuasion: GenericStatInput
-        religion: GenericStatInput
-        sleightOfHand: GenericStatInput
-        stealth: GenericStatInput
-        survival: GenericStatInput
+        acrobatics: GenericSkillsInput
+        animalHandling: GenericSkillsInput
+        arcana: GenericSkillsInput
+        athletics: GenericSkillsInput
+        deception: GenericSkillsInput
+        history: GenericSkillsInput
+        insight: GenericSkillsInput
+        intimidation: GenericSkillsInput
+        investigation: GenericSkillsInput
+        medicine: GenericSkillsInput
+        nature: GenericSkillsInput
+        perception: GenericSkillsInput
+        performance: GenericSkillsInput
+        persuasion: GenericSkillsInput
+        religion: GenericSkillsInput
+        sleightOfHand: GenericSkillsInput
+        stealth: GenericSkillsInput
+        survival: GenericSkillsInput
+    }
+
+    type GenericSkills {
+        proficient: Boolean
+        value: Int
+    }
+
+    input GenericSkillsInput {
+        proficient: Boolean
+        value: Int
     }
 
     type Weapons {
@@ -365,7 +357,7 @@ const typeDefs = gql`
     type SpellList {
         name: String
         level: Int
-        type: String
+        spellType: String
         castingTime: String
         range: String
         target: String
@@ -378,7 +370,7 @@ const typeDefs = gql`
     input SpellListInput {
         name: String
         level: Int
-        type: String
+        spellType: String
         castingTime: String
         range: String
         target: String
@@ -397,8 +389,9 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
-        character(playerId: ID, characterId: ID!): Character
-        characters(username: String!): [Character]
+        characters: [Character]
+        character(userId: ID, characterId: ID!): Character
+        userCharacters(username: String!): [Character]
     }
 
     type Mutation {

@@ -1,8 +1,7 @@
+// imports
 const { User, Character } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-
-// TO-DO: Create resolvers for User and Character Data
 
 const resolvers = {
     Query: {
@@ -11,7 +10,8 @@ const resolvers = {
                 const userData = await User
                     .findOne({ _id: context.user._id})
                     .select("-__v -password")
-                    .populate("characters");
+                    .populate("userId")
+                    .populate("savedCharacters");
 
                 return userData;
             };
@@ -32,6 +32,14 @@ const resolvers = {
                 .findOne({ username })
                 .select("-__v")
         },
+
+        // get all users
+        characters: async () => {
+            return Character
+                .find()
+                .select("-__v")
+        }, 
+
     },
     Mutation: {
         addUser: async (parent, args) => {
