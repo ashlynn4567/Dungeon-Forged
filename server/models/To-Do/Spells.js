@@ -1,1 +1,0 @@
-// TO-DO: Create Schema to hold SRD D&D Information for Character Creation to pull from

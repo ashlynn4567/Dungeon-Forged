@@ -1,3 +1,5 @@
+<img alt="Dungeon-Forged Logo" src="./client/src/assets/logos/transparent-orange-white.png"/>
+
 # Dungeon-Forged
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -17,7 +19,7 @@ This is a collaboration project to create a Full-Stack single page application (
 
 ## Deployed Site
 
-Follow [this link]([insert later]) to view and use our site!
+Follow [this link](https://intense-reef-18313.herokuapp.com/) to view and use our site!
 
 ## Features
 

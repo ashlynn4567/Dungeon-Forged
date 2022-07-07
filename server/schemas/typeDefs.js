@@ -1,5 +1,7 @@
 const { gql } = require("apollo-server-express");
 
+// TO-DO: Queries and Mutations for types created from character data
+
 // create our typeDefs
 const typeDefs = gql`
     type User {
@@ -11,7 +13,7 @@ const typeDefs = gql`
     }
 
     type Character {
-        playerName: ID
+        userId: ID
         characterId: ID
         characterSheet: CharacterSheet
         backstoryAndPersonality: BackstoryAndPersonality
@@ -26,14 +28,6 @@ const typeDefs = gql`
         race: String
         alignment: String
         experiencePoints: Int
-        statistics: Statistics
-        weapons: [Weapons]
-        proficiencies: Proficiencies
-        equipment: Equipment
-        featuresAndTraits: [FeaturesAndTraits]
-    }
-
-    type Statistics {
         abilityScores: AbilityScores
         inspiration: Int
         proficiencyBonus: Int
@@ -42,8 +36,36 @@ const typeDefs = gql`
         initiative: Int
         speed: Int
         hitPoints: HitPoints
-        skills: [Skills]
+        skills: Skills
         passivePerception: Int
+        weapons: [Weapons]
+        proficiencies: Proficiencies
+        equipment: Equipment
+        featuresAndTraits: [FeaturesAndTraits]
+    }
+
+    input CharacterSheetInput {
+        characterName: String
+        class: String
+        level: Int
+        background: String
+        race: String
+        alignment: String
+        experiencePoints: Int
+        abilityScores: AbilityScoresInput
+        inspiration: Int
+        proficiencyBonus: Int
+        savingThrows: SavingThrowsInput
+        armorClass: Int
+        initiative: Int
+        speed: Int
+        hitPoints: HitPointsInput
+        skills: SkillsInput
+        passivePerception: Int
+        weapons: [WeaponsInput]
+        proficiencies: ProficienciesInput
+        equipment: EquipmentInput
+        featuresAndTraits: [FeaturesAndTraitsInput]
     }
 
     type AbilityScores {
@@ -55,16 +77,39 @@ const typeDefs = gql`
         charisma: Int
     }
 
-    type SavingThrows {
-        strength: GenericStat
-        dexterity: GenericStat
-        constitution: GenericStat
-        intelligence: GenericStat
-        wisdom: GenericStat
-        charisma: GenericStat
+    input AbilityScoresInput {
+        strength: Int
+        dexterity: Int
+        constitution: Int
+        intelligence: Int
+        wisdom: Int
+        charisma: Int
     }
 
-    type GenericStat {
+    type SavingThrows {
+        strength: GenericSavingThrow
+        dexterity: GenericSavingThrow
+        constitution: GenericSavingThrow
+        intelligence: GenericSavingThrow
+        wisdom: GenericSavingThrow
+        charisma: GenericSavingThrow
+    }
+
+    input SavingThrowsInput {
+        strength: GenericSavingThrowInput
+        dexterity: GenericSavingThrowInput
+        constitution: GenericSavingThrowInput
+        intelligence: GenericSavingThrowInput
+        wisdom: GenericSavingThrowInput
+        charisma: GenericSavingThrowInput
+    }
+
+    type GenericSavingThrow {
+        proficient: Boolean
+        value: Int
+    }
+
+    input GenericSavingThrowInput {
         proficient: Boolean
         value: Int
     }
@@ -73,33 +118,66 @@ const typeDefs = gql`
         maximum: Int
         current: Int
         temporary: Int
-        hitDice: HitDice
+        hitDice: String
     }
 
-    type HitDice {
-        total: String
-        current: String
+    input HitPointsInput {
+        maximum: Int
+        current: Int
+        temporary: Int
+        hitDice: String
     }
 
     type Skills {
-        acrobatics: GenericStat
-        animalHandling: GenericStat
-        arcana: GenericStat
-        athletics: GenericStat
-        deception: GenericStat
-        history: GenericStat
-        insight: GenericStat
-        intimidation: GenericStat
-        investigation: GenericStat
-        medicine: GenericStat
-        nature: GenericStat
-        perception: GenericStat
-        performance: GenericStat
-        persuasion: GenericStat
-        religion: GenericStat
-        sleightOfHand: GenericStat
-        stealth: GenericStat
-        survival: GenericStat
+        acrobatics: GenericSkills
+        animalHandling: GenericSkills
+        arcana: GenericSkills
+        athletics: GenericSkills
+        deception: GenericSkills
+        history: GenericSkills
+        insight: GenericSkills
+        intimidation: GenericSkills
+        investigation: GenericSkills
+        medicine: GenericSkills
+        nature: GenericSkills
+        perception: GenericSkills
+        performance: GenericSkills
+        persuasion: GenericSkills
+        religion: GenericSkills
+        sleightOfHand: GenericSkills
+        stealth: GenericSkills
+        survival: GenericSkills
+    }
+
+    input SkillsInput {
+        acrobatics: GenericSkillsInput
+        animalHandling: GenericSkillsInput
+        arcana: GenericSkillsInput
+        athletics: GenericSkillsInput
+        deception: GenericSkillsInput
+        history: GenericSkillsInput
+        insight: GenericSkillsInput
+        intimidation: GenericSkillsInput
+        investigation: GenericSkillsInput
+        medicine: GenericSkillsInput
+        nature: GenericSkillsInput
+        perception: GenericSkillsInput
+        performance: GenericSkillsInput
+        persuasion: GenericSkillsInput
+        religion: GenericSkillsInput
+        sleightOfHand: GenericSkillsInput
+        stealth: GenericSkillsInput
+        survival: GenericSkillsInput
+    }
+
+    type GenericSkills {
+        proficient: Boolean
+        value: Int
+    }
+
+    input GenericSkillsInput {
+        proficient: Boolean
+        value: Int
     }
 
     type Weapons {
@@ -111,7 +189,21 @@ const typeDefs = gql`
         properties: [String]
     }
 
+    input WeaponsInput {
+        weaponName: String
+        weaponType: [String]
+        proficient: Boolean
+        attackBonus: Int
+        damage: WeaponDamageInput
+        properties: [String]
+    }
+
     type WeaponDamage {
+        damageType: String
+        damageValue: String
+    }
+
+    input WeaponDamageInput {
         damageType: String
         damageValue: String
     }
@@ -123,12 +215,33 @@ const typeDefs = gql`
         weapons: [String]
     }
 
+    input ProficienciesInput {
+        tools: [String]
+        languages: [String]
+        armor: [String]
+        weapons: [String]
+    }
+
     type Equipment {
         items: [Items]
         currency: Currency
     }
 
+    input EquipmentInput {
+        items: [ItemsInput]
+        currency: CurrencyInput
+    }
+
     type Items {
+        itemName: String
+        itemType: String
+        itemQuantity: Int
+        itemWeight: Int
+        itemRarity: String
+        itemDescription: String
+    }
+
+    input ItemsInput {
         itemName: String
         itemType: String
         itemQuantity: Int
@@ -145,13 +258,43 @@ const typeDefs = gql`
         platinumPieces: Int
     }
 
+    input CurrencyInput {
+        copperPieces: Int
+        silverPieces: Int
+        electrum: Int
+        goldPieces: Int
+        platinumPieces: Int
+    }
+
     type FeaturesAndTraits {
         name: String
         origin: String
         description: String
     }
 
+    input FeaturesAndTraitsInput {
+        name: String
+        origin: String
+        description: String
+    }
+
     type BackstoryAndPersonality {
+        age: Int
+        height: String
+        weight: String
+        eyes: String
+        skin: String
+        hair: String
+        personalityTraits: [String]
+        ideals: [String]
+        bonds: [String]
+        flaws: [String]
+        backstory: String
+        alliesAndOrganizations: String
+        treasure: String
+    }
+
+    input BackstoryAndPersonalityInput {
         age: Int
         height: String
         weight: String
@@ -177,7 +320,29 @@ const typeDefs = gql`
         spellList: [SpellList]
     }
 
+    input SpellsInput {
+        spellcastingClass: String
+        spellcastingAbility: String
+        spellSaveDC: Int
+        spellAttackBonus: Int
+        spellSlotsTotal: SpellSlotsInput
+        spellSlotsExpended: SpellSlotsInput
+        spellList: [SpellListInput]
+    }
+
     type SpellSlots {
+        level1: Int
+        level2: Int
+        level3: Int
+        level4: Int
+        level5: Int
+        level6: Int
+        level7: Int
+        level8: Int
+        level9: Int
+    }
+
+    input SpellSlotsInput {
         level1: Int
         level2: Int
         level3: Int
@@ -192,7 +357,20 @@ const typeDefs = gql`
     type SpellList {
         name: String
         level: Int
-        type: String
+        spellType: String
+        castingTime: String
+        range: String
+        target: String
+        components: [String]
+        duration: String
+        prepared: Boolean
+        description: String
+    }
+
+    input SpellListInput {
+        name: String
+        level: Int
+        spellType: String
         castingTime: String
         range: String
         target: String
@@ -211,6 +389,15 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
+        characters: [Character]
+        character(userId: ID, characterId: ID!): Character
+        userCharacters(username: String!): [Character]
+    }
+
+    type Mutation {
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+        addCharacter(characterSheet: CharacterSheetInput!, backstoryAndPersonality: BackstoryAndPersonalityInput!, spells: SpellsInput!): Character
     }
 `;
 
