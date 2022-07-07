@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-export default function CharecterBuilder() {
+export default function CharacterBuilder() {
   return (
     <div style={{textAlign: 'center'}}>
-      <h1>Charecter Builder</h1>
+      <h1>Character Builder</h1>
       <div>
         
-      <p>Build your Charecter and Save For later Here!</p>
+      <p>Build your Character and Save For later Here!</p>
       {/* <img src={} height="500px" style={{float: 'right',
        paddingRight:'45px'}} /> */}
 
