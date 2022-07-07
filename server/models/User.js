@@ -1,6 +1,7 @@
 // imports 
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const { dateFormat } = require("../utils/dateFormat");
 
 // import schema from Character
 const characterSchema = require("./Character");
@@ -22,9 +23,26 @@ const userSchema = new Schema(
         password: {
             type: String, 
             required: true,
-        }, 
+            hide: true,
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            // date formatter
+            get: (createdAtVal => dateFormat(createdAtVal))
+        },
+        updatedAt: {
+            type: Date,
+            // date formatter
+            get: (updatedAtVal => dateFormat(updatedAtVal))
+        },
         // set savedCharacters as an array of data that follows characterSchema rules
-        savedCharacters: [characterSchema], 
+        savedCharacters: [
+            {
+                type: Schema.Types.ObjectId, 
+                ref: "Character",
+            }
+        ],
     }, 
     // use virtuals
     {
@@ -40,7 +58,6 @@ userSchema.pre("save", async function (next) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
     };
-
     next();
 });
 
