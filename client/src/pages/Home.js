@@ -1,13 +1,12 @@
 import React from 'react';
-import dragon from './images/favicon.ico';
+import dragon from '../assets/logos/icon_transparent.png';
 
 export default function Home() {
   return (
     <div style={{textAlign: 'center'
     }}>
-      <h1></h1>
       <a>
-      <img src={dragon} height="500px" 
+      <img alt="logo" src={dragon} height="500px" 
       style={{}}/>
       </a>
 
