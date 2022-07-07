@@ -15,12 +15,12 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#CharecterBuilder"
-          onClick={() => handlePageChange('CharecterBuilder')}
+          href="#CharacterBuilder"
+          onClick={() => handlePageChange('CharacterBuilder')}
           
-          className={currentPage === 'CharecterBuilder' ? 'nav-link active' : 'nav-link'}
+          className={currentPage === 'CharacterBuilder' ? 'nav-link active' : 'nav-link'}
         >
-          Charecter Builder
+          Character Builder
         </a>
       </li>
       <li className="nav-item">
@@ -50,7 +50,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           
           className={currentPage === 'SavedCharacters' ? 'nav-link active' : 'nav-link'}
         >
-          Saved Charecters
+          Saved Characters
         </a>
       </li>
     </ul>
