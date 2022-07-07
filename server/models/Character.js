@@ -14,7 +14,7 @@ const { dateFormat } = require("../utils/dateFormat");
 // character Schema
 const characterSchema = new Schema(
     {
-        playerName: {
+        playerId: {
             // TO-DO: Make this username instead of userID (in typedefs too)
             type: Schema.Types.ObjectId, 
             ref: "User",

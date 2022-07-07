@@ -27,6 +27,7 @@ db.once("open", async () => {
     // TO-DO: Create database of possible data for races, classes, and etc for seeded data to pull from
     const characterData = [
         {
+            playerName: "[Insert Later]",
             characterID: 1,
             characterSheet: {
                 characterName: "Frug Kovocun",
@@ -493,6 +494,7 @@ db.once("open", async () => {
             createdAt: Date.now,
         }, 
         {
+            playerName: "[Insert Later]",
             characterID: 2,
             characterSheet: {
                 characterName: "Medrash Daardendrian",
@@ -1004,6 +1006,7 @@ db.once("open", async () => {
             createdAt: Date.now,
         },
         {
+            playerName: "[Insert Later]",
             characterID: 3,
             characterSheet: {
                 characterName: "Holg Amblecrown",
