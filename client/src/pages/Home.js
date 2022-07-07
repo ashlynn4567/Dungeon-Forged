@@ -16,7 +16,7 @@ export default function Home() {
         textAlign: 'center'}}>  
 
       <h4>
-       Welcome to our dungeons and dragons charecter sheet creator.
+       Welcome to our dungeons and dragons character sheet creator!
       </h4>
       </div>
     </div>
