@@ -11,17 +11,17 @@ function Login(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("does it reach here?", login)
+    console.log("yuh?", login)
     try {
       console.log(login)
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
       });
       const token = mutationResponse.data.login.token;
-      console.log("it doesn't even make it this far")
+      console.log("we shall see")
       Auth.login(token);
     } catch (e) {
-      console.log("this is the error lmao", e);
+      console.log("big error", e);
     }
   };
 
