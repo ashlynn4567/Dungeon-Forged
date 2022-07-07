@@ -1,3 +1,5 @@
+<img alt="Dungeon-Forged Logo" src="./client/src/assets/logos/transparent-orange-white.png"/>
+
 # Dungeon-Forged
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
