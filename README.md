@@ -1,8 +1,8 @@
-<img alt="Dungeon-Forged Logo" src="./client/src/assets/logos/transparent-orange-white.png"/>
-
 # Dungeon-Forged
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<img alt="Dungeon-Forged Logo" src="./client/src/assets/logos/transparent-orange-white.png"/>
 
 ## Table-of-Contents
 
@@ -23,17 +23,25 @@ Follow [this link](https://intense-reef-18313.herokuapp.com/) to view and use ou
 
 ## Features
 
-[insert later]
+Dungeons & Dragons is a popular tabletop role-playing game that has been played for over 25 years. The game is set in a medieval fantasy world in which multiple players form a party that is led through an adventure by one player who assumes the role of the storyteller, or Dungeon Master. The Dungeon Master comes up with encounters to which the player characters can respond however they see fit, creating a unique gaming experience each time.
+
+However, before you can even begin your game, you must create your character. This can be a confusing and tedious process, especially for new players. Each choice you make in character creation can affect your character’s statistics and abilities in different ways. AS AN avid lover of Dungeons and Dragons, I WANT an optimized tool to create my character SO THAT the character creation is less tedious.
+
+In order to streamline this process, we wanted to create a character generation hub, where users can create and store their character sheets. Our application could help the user through the character creation process by automatically updating and filling out their statistics in response to the user’s selections - saving them time and energy in this already tedious process. Once they finish creating their character, users should be able to download their character sheets so they can be game-ready in a flash.
+
+```
+AS AN avid lover of Dungeons and Dragons, I WANT an optimized tool to create my character SO THAT the character creation is less tedious.
+```
 
 <p align="center">
-<img alt="[insert later]" src="./assets/images/dungeon-forged-screenshot.jpg"/>
+<img alt="[insert later]" src="./client/src/assets/logos/[insert later].png"/>
 </p>
 
 [insert later]
 
 <p align="center">
 <a href="https://youtu.be/axO73hqslPs">
-<img alt="[insert later]" src="./assets/images/dungeon-forged-demo.gif" />
+<img alt="[insert later]" src="./client/src/assets/logos/[insert later].png"/>
 </a>
 <br>(Click the thumbnail above or this <a href="[insert later]" target="_blank">link</a> to view the demonstration video on YouTube.)
 </p>
