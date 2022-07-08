@@ -10,7 +10,7 @@ const resolvers = {
                 const userData = await User
                     .findOne({ _id: context.user._id})
                     .select("-__v -password")
-                    .populate("userId")
+                    .populate("_id")
                     .populate("savedCharacters");
 
                 return userData;
@@ -66,20 +66,18 @@ const resolvers = {
             return { token, user };
         }, 
 
-        addCharacter: async (parent, args, context) => {
+        saveCharacter: async (parent, { characterData }, context) => {
             if (context.user) {
-                const character = await Character.create({ ...args, username: context.user.username });
-
-                await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { savedCharacters: character._id } },
-                    { new: true }
-                );
-
-                return character;
+                const updatedUser = await User
+                    .findByIdAndUpdate(
+                        { _id: context.user._id },
+                        { $addToSet: { savedCharacters: characterData }}, 
+                        { new: true }
+                    )
+                    .populate("characters");
+                return updatedUser;
             };
-
-            throw new AuthenticationError("You need to be logged in to create a character!");
+            throw new AuthenticationError("You need to be logged in to save a character!");
         },
     },
 };

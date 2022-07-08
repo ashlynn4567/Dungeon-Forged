@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const { dateFormat } = require("../utils/dateFormat");
 
 // import schema from Character
-const characterSchema = require("./Character");
+const characterSchema = require("./Character").schema;
 
 // create user schema
 const userSchema = new Schema(
@@ -37,12 +37,7 @@ const userSchema = new Schema(
             get: (updatedAtVal => dateFormat(updatedAtVal))
         },
         // set savedCharacters as an array of data that follows characterSchema rules
-        savedCharacters: [
-            {
-                type: Schema.Types.ObjectId, 
-                ref: "Character",
-            }
-        ],
+        savedCharacters: [characterSchema],
     }, 
     // use virtuals
     {

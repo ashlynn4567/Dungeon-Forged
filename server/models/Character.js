@@ -5,11 +5,6 @@ const { dateFormat } = require("../utils/dateFormat");
 // character Schema
 const characterSchema = new Schema(
     {
-        userId: {
-            // TO-DO: Make this username instead of userID (in typedefs too)
-            type: Schema.Types.ObjectId, 
-            ref: "User",
-        },
         characterSheet: {
             characterName: {
                 type: String, 
