@@ -79,6 +79,18 @@ const resolvers = {
             };
             throw new AuthenticationError("You need to be logged in to save a character!");
         },
+
+        removeCharacter: async(parent, { characterId }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id }, 
+                    { $pull: {savedCharacters: { characterId } } },
+                    { new: true }
+                );
+                return updatedUser;
+            };
+            throw new AuthenticationError("You need to be logged in to delete your character!");
+        }
     },
 };
 

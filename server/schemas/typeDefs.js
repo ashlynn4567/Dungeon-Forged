@@ -19,6 +19,13 @@ const typeDefs = gql`
         spells: Spells
     }
 
+    input CharacterInput {
+        characterId: ID
+        characterSheet: CharacterSheetInput
+        backstoryAndPersonality: BackstoryAndPersonalityInput
+        spells: SpellsInput
+    }
+
     type CharacterSheet {
         characterName: String
         class: String
@@ -389,14 +396,15 @@ const typeDefs = gql`
         users: [User]
         user(username: String!): User
         characters: [Character]
-        character(userId: ID, characterId: ID!): Character
+        character(_id: ID, characterId: ID!): Character
         userCharacters(username: String!): [Character]
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        saveCharacter(characterSheet: CharacterSheetInput!, backstoryAndPersonality: BackstoryAndPersonalityInput!, spells: SpellsInput!): User
+        saveCharacter(characterInput: CharacterInput!): User
+        removeCharacter(characterId: ID!): User
     }
 `;
 
