@@ -40,8 +40,8 @@ AS AN avid lover of Dungeons and Dragons, I WANT an optimized tool to create my 
 [insert later]
 
 <p align="center">
-<a href="https://youtu.be/axO73hqslPs">
-<img alt="[insert later]" src="./client/src/assets/logos/[insert later].png"/>
+<a href="[insert later]">
+<img alt="[insert later]" src="./client/src/assets/logos/[insert later].gif"/>
 </a>
 <br>(Click the thumbnail above or this <a href="[insert later]" target="_blank">link</a> to view the demonstration video on YouTube.)
 </p>
@@ -96,10 +96,10 @@ We're always interested in refactoring code to improve it's functionality. If yo
 
 ### Contributers
 
-| **Ashley Smith**                                             | **Jack Ford**                            | **Jackson Mason**                                                        | **Kaia Innes**                                                  |
-| ------------------------------------------------------------ | ---------------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------- |
-| - [Github](https://github.com/ashlynn4567)                   | - [Github](https://github.com/SaintShay) | - [Github](https://github.com/ShibuyaCho)                                | - [Github](https://github.com/Re1d0n)                           |
-| - [LinkedIn](https://www.linkedin.com/in/ashley-lynn-smith/) | - [LinkedIn]([insert later])             | - [LinkedIn](https://www.linkedin.com/mwlite/in/jackson-mason-28b043228) | - [LinkedIn](https://www.linkedin.com/in/kaia-innes-960034224/) |
+| **Ashley Smith**                                             | **Kaia Innes**                                                  |
+| ------------------------------------------------------------ | --------------------------------------------------------------- |
+| - [Github](https://github.com/ashlynn4567)                   | - [Github](https://github.com/Re1d0n)                           |
+| - [LinkedIn](https://www.linkedin.com/in/ashley-lynn-smith/) | - [LinkedIn](https://www.linkedin.com/in/kaia-innes-960034224/) |
 
 ### Acknowledgements
 

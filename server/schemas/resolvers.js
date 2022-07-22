@@ -74,7 +74,7 @@ const resolvers = {
                         { $addToSet: { savedCharacters: characterData }}, 
                         { new: true }
                     )
-                    .populate("characters");
+                    .populate("savedCharacters");
                 return updatedUser;
             };
             throw new AuthenticationError("You need to be logged in to save a character!");
